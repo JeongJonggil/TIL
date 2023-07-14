@@ -1,3 +1,3 @@
 # Today I Learned
 - '230714
-    [GIT](Git.md)
+    [GIT](TIL/Git.md)
