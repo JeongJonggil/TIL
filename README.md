@@ -1,1 +1,3 @@
-[GIT](Git.md)
+# Today I Learned
+- '230714
+    [GIT](Git.md)
