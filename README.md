@@ -3,5 +3,5 @@
       [GIT](TIL/Git.md)
 - '230715
       [list Comprehension](TIL/
-      [For문 안의 중첩 if](TIL/.md)
+      [For문 안의 중첩 if](TIL/For문 안의 중첩 if.md)
   
