@@ -1,4 +1,6 @@
 # Today I Learned
+
+* 오답노트[TIL/오답노트.md]
 * 230714
   * [GIT](TIL/Git.md)
 * 230715
