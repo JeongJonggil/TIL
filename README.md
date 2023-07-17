@@ -11,3 +11,4 @@
 * 230717
   * [파이썬 Style Guide](TIL/파이썬%20Style%20Guide.md)
   * [연산자 우선순위](TIL/연산자%20우선순위.md)
+  * [시험대비](TIL/시험대비.md)
