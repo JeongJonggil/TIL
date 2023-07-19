@@ -1,4 +1,4 @@
-# Funcition : 인자(argument)
+# Funcition : 인자
 
 ## 1. 매개변수(parameter) vs 인자(argument)
 
