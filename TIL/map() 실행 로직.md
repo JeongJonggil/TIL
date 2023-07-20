@@ -29,10 +29,4 @@ def rental_book(user):
        → **print문 실행 안됨**
 
 #2의 경우
-     * list()를 실행하면서 iterator상태(대기중 상태)였던 값을 반환하면서 print문을 실행하게         됨
-
-
-
-
-
-
+     * list()를 실행하면서 iterator상태(대기중 상태)였던 값을 반환하면서 print문을 실행하게됨
