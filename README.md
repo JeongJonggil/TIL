@@ -16,3 +16,6 @@
   * [얕은복사 깊은복사(재정리 필요)](TIL/얕은복사%20깊은복사(재정리%20필요).md)
 * 230719
   * [Funcition_인자](TIL/Funcition_인자.md)
+* 230720
+  * [map() 실행 로직](TIL/map()%20실행%20로직.md)
+  * [enumerate](TIL/enumerate.md)
