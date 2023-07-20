@@ -3,12 +3,12 @@
 1. iterable의 요소가 function의 인자로 들어가서 function이 실행되는게 아니고,
    **fucntion을 iterable의 각각의 요소에 적용한다고 생각하는게 옳음**
 
-   2. `map()` 함수는 `function`을 `iterable`의 각 요소에 적용하여 그 결과를 iterator로         반환함. (값을 호출하기 위한 대기중인 상태로 저장된다고 생각하면 됨)
+   2. `map()` 함수는 `function`을 `iterable`의 각 요소에 적용하여 그 결과를 iterator로 반환함. (값을 호출하기 위한 대기중인 상태로 저장된다고 생각하면 됨)
 
 
 
     ※ **iterator** 
-    : iterator는 값을 **필요할 때**마다 하나씩 값을 반환할 수 있는 메커니즘 또는 접근방법을       제공하는 객체. iterator 자체는 값을 가지는 것이 아님. 실제로 iterator에는 데이터가       저장되어 있지 않음.
+    : iterator는 값을 **필요할 때**마다 하나씩 값을 반환할 수 있는 메커니즘 또는 접근방법을 제공하는 객체. iterator 자체는 값을 가지는 것이 아님. 실제로 iterator에는 데이터가 저장되어 있지 않음.
 
 
 
