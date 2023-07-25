@@ -30,7 +30,7 @@
 
     (1) Str : 문자열로만 구성 가능
 
-    (2) List, Dict_value: 모든 데이터 타입을 값으로 가질 수 있음
+    (2) List + Dict_value: 모든 데이터 타입을 값으로 가질 수 있음
 
-    (3) Dicit_Key, Set  
+    (3) Dicit_Key + Set  
       : 해쉬 가능한 타입만 가능 → Immutable + 해시 함수를 통해 해시값을 얻을 수 있는 타입
