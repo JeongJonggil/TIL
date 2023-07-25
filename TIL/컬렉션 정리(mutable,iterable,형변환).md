@@ -4,15 +4,17 @@
 
     **(1) mutable** : 객체의 상태를 변경해도 메모리에서 같은 주소를 유지
 
-    (2) iterable : 반복문에 사용할 수 있으면 iterable하다고 생각하면 됨
+    **(2) iterable** : 반복문에 사용할 수 있으면 iterable하다고 생각하면 됨
+  
+![image](https://github.com/JeongJonggil/TIL/assets/139416006/44a6b260-c080-47bb-9fe3-949e4d82455e)
 
-![](C:\Users\SSAFY\AppData\Roaming\marktext\images\2023-07-25-09-48-11-image.png)
+
 
 **********
 
 ### 2. 형변환
+![image](https://github.com/JeongJonggil/TIL/assets/139416006/89421ae8-90d0-490b-8e95-7a95c901af26)
 
-![](C:\Users\SSAFY\AppData\Roaming\marktext\images\2023-07-25-09-50-17-image.png)
 
 ****
 
