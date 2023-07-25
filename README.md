@@ -20,4 +20,4 @@
   * [map() 실행 로직](TIL/map()%20실행%20로직.md)
   * [enumerate](TIL/enumerate.md)
 * 230725  
-  *[컬렉션 정리(mutable,iterable,형변환)](TIL/컬렉션%20정리(mutable,iterable,형변환).md)
+  * [컬렉션 정리(mutable,iterable,형변환)](TIL/컬렉션%20정리(mutable,iterable,형변환).md)
