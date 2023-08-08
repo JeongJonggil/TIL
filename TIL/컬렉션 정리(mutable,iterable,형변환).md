@@ -4,7 +4,7 @@
 
     **(1) mutable** : 객체의 상태를 변경해도 메모리에서 같은 주소를 유지
 
-    **(2) iterable** : 반복문에 사용할 수 있으면 iterable 하다고 생각하면 됨(sequance랑은 다른 개념임) <br>
+    **(2) iterable** : 반복문에 사용할 수 있으면 iterable 하다고 생각하면 됨 (sequance랑은 다른 개념임) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**※ set과 dictionary도 iterable 함. 대신 순서가 없으므로, 특정 순서대로 요소들을 순회하는 것은 보장되지 않음**  
   
 ![image](https://github.com/JeongJonggil/TIL/assets/139416006/44a6b260-c080-47bb-9fe3-949e4d82455e)
