@@ -52,7 +52,7 @@
 # 3. CSS Layout
 ### ※ 사용빈도 flex > position > box model,  중요순위 box-model > flex > position  
   
-### (3) CSS Box Model
+### (1) CSS Box Model
 
 #### : 모든 HTML 요소를 사각형 박스로 표현하는 개념
 
@@ -64,13 +64,13 @@
 
 
 
-### (4) CSS Position
+### (2) CSS Position
 
 #### - 유형 : static, relative, absolute, fixed, sticky
 
 #### - 요소를 Normal Flow에서 제거하여 다른 위치로 배치하는 것
 
-### (5) CSS Flexbox 
+### (3) CSS Flexbox 
 ####  : 요소를 행과 열 형태로 배치하는 1차원 레이아웃 방식  
     *Flexbox는 2가지만 기억하면 사용하기 쉬움
     1. main axis(주 축)을 찾아라
