@@ -67,6 +67,7 @@
 ### (2) CSS Position
 
 #### - 유형 : static, relative, absolute, fixed, sticky
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **※ position : absolute -> 가장 가까운 부모 중"static"이 아닌 부모를 기준으로 움직임**
 
 #### - 요소를 Normal Flow에서 제거하여 다른 위치로 배치하는 것
 
