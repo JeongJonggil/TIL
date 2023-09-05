@@ -17,7 +17,7 @@
 **2) Inline Type(a, img, span)**    
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ㄱ. 줄바꿈이 발생하지 않는다(한줄을 차지하지 않는다)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ㄴ. width와 height 속성을 사용할 수 없음  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ㄷ, padding,margins,border로 **수평 방향은 밀어낼 수 있으나, 수직 방향으로는 적용이 안됨**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ㄷ, padding,margins,border로 **수평 방향은 밀어낼 수 있으나, 수직 방향으로는 못 밀어냄**  
 
 **3) Inline-Block Type**    
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**ㄱ. 요소가 줄 바꿈 되는 것을 원하지 않으면서 너비와 높이를 적용하고 싶은 경우 사용**  
