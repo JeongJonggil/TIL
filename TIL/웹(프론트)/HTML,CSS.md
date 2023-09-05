@@ -37,4 +37,14 @@
 
 - 상속 되는 속성 : Text 관련 요소(font,color,text-align)
 
-- 상속 되지 않는 속성 : Box model, position 관련 요소
+- 상속 되지 않는 속성 : Box model, position 관련 요소  
+  
+### (3) CSS Box Model
+#### : 모든 HTML 요소를 사각형 박스로 표현하는 개념
+  **-> 내용(content), 안쪽 여백(padding), 테두리(border), 외부 간격(margin)으로 구성되는 개념**  
+  
+![image](https://github.com/JeongJonggil/TIL/assets/139416006/ac8c59df-99df-4f06-8a99-e5e4cc26eda3)  
+  
+![image](https://github.com/JeongJonggil/TIL/assets/139416006/ed415a1f-20c2-466e-97fd-d0a647a70ee6)
+
+
