@@ -20,7 +20,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ㄴ. width와 height 속성을 사용할 수 없음  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ㄷ, padding,margins,border로 **수평 방향은 밀어낼 수 있으나, 수직 방향으로는 적용이 안됨**  
   
-**3) Inline Block Type**    
+**3) Inline-Block Type**    
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**ㄱ. 요소가 줄 바꿈 되는 것을 원하지 않으면서 너비와 높이를 적용하고 싶은 경우 사용**  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ㄴ. style에서 display: inline-block;으로 지정함
  
