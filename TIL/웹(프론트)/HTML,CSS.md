@@ -9,16 +9,21 @@
 
 
 
-### (2) Block, Inline Type 
+### (2) Block, Inline, Inline-Block Type 
 
 **1) Block Type(h1~6,p,div)**  
-     ㄱ. 줄바꿈이 발생한다(한 줄을 차지한다)  
-     ㄴ. width와 height 속성을 사용하여 너비와 높이를 지정할 수 있음(지정하지 않으면 너비는 한 줄을 차지함)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ㄱ. 줄바꿈이 발생한다(한 줄을 차지한다)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ㄴ. width와 height 속성을 사용하여 너비와 높이를 지정할 수 있음(지정하지 않으면 너비는 한 줄을 차지함)  
     
 **2) Inline Type(a, img, span)**    
-     ㄱ. 줄바꿈이 발생하지 않는다(한줄을 차지하지 않는다)  
-     ㄴ. width와 height 속성을 사용할 수 없음  
-     ㄷ, padding,margins,border로 **수평 방향은 밀어낼 수 있으나, 수직 방향으로는 적용이 안됨**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ㄱ. 줄바꿈이 발생하지 않는다(한줄을 차지하지 않는다)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ㄴ. width와 height 속성을 사용할 수 없음  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ㄷ, padding,margins,border로 **수평 방향은 밀어낼 수 있으나, 수직 방향으로는 적용이 안됨**  
+  
+**3) Inline Block Type**    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**ㄱ. 요소가 줄 바꿈 되는 것을 원하지 않으면서 너비와 높이를 적용하고 싶은 경우 사용**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ㄴ. style에서 display: inline-block;으로 지정함
+ 
 
 # 2. CSS  
 ### (1) 적용 방식
