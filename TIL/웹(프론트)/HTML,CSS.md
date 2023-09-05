@@ -73,6 +73,6 @@
 ### (5) CSS Flexbox 
 ####  : 요소를 행과 열 형태로 배치하는 1차원 레이아웃 방식  
     *Flexbox는 2가지만 기억하면 사용하기 쉬움
-    1. main axis(주 축)이 어디 방향인지
-    2. 배치는 Flex Container를 조작해서 조절함 
+    1. main axis(주 축)을 찾아라
+    2. 배치는 Flex Container를 조작해라 
 
