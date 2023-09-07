@@ -77,3 +77,9 @@
     1. main axis(주 축)을 찾아라
     2. 배치는 Flex Container를 조작해라 
 
+### (4) CSS Grid 
+####  : 요소를 12개의 column으로 분배하여 배치하는 2차원 레이아웃 방식  
+    *Grid는 3가지만 기억하면 사용하기 쉬움
+    1. 12개의 column을 적절히 분배하여 레이아웃을 배치하는 것
+    2. 2차원 배열이기 때문에 flexbox에서 row가 추가된 세팅이라고 생각하면 쉬움
+    3. flexbox와 비슷한 동작 방식임(container, row, column을 조작)
