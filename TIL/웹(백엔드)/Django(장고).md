@@ -1,4 +1,4 @@
-![image](https://github.com/JeongJonggil/TIL/assets/139416006/b869e448-f5ed-4f64-935d-7984528b8b5e)# Django(장고)
+# Django(장고)
 
 ### 1. Django
 
