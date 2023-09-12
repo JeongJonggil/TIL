@@ -1,4 +1,4 @@
-# Django(장고)
+![image](https://github.com/JeongJonggil/TIL/assets/139416006/b869e448-f5ed-4f64-935d-7984528b8b5e)# Django(장고)
 
 ### 1. Django
 
@@ -6,7 +6,8 @@
 
 ### 2. 프로젝트 생성 전 루틴
 
-![](C:\Users\SSAFY\AppData\Roaming\marktext\images\2023-09-12-10-05-57-image.png)
+![image](https://github.com/JeongJonggil/TIL/assets/139416006/d74509f2-5173-4741-854a-3d0ce0901ab3)
+
 
 - VS Code 가상환경 활성화(source 명령어를 매 번 입력하는게 번거롭기 때문에)
   : ctrl + shift + p → interpreter →  Python Selcect Interpreter → venv python 선택
@@ -29,7 +30,8 @@
 
 ### 4. Django 프로젝트 생성 루틴 정리 + git
 
-![](C:\Users\SSAFY\AppData\Roaming\marktext\images\2023-09-12-10-23-31-image.png)
+![image](https://github.com/JeongJonggil/TIL/assets/139416006/4ed41c74-9ab1-4c02-8ef9-9985655562f8)
+
 
 ### 5. Django 프로젝트와 앱
 
@@ -132,18 +134,24 @@
 
 ### 10. 요청과 응답
 
-![](C:\Users\SSAFY\AppData\Roaming\marktext\images\2023-09-12-10-52-49-image.png)
+![image](https://github.com/JeongJonggil/TIL/assets/139416006/867fde7c-a30b-40ec-b030-a86592cc6898)
+
 
 #### ※ 백엔드는 위 사진처럼 동작함을 항상 떠올려야 함 ※
 
 
 
-(1) URL
-
-![](C:\Users\SSAFY\AppData\Roaming\marktext\images\2023-09-12-10-58-20-image.png)
-
+##### (1) URL
+![image](https://github.com/JeongJonggil/TIL/assets/139416006/8d675540-35fb-4d09-ace6-d0e9798b91b3)
 
 
-(2) View
+##### (2) View
+![image](https://github.com/JeongJonggil/TIL/assets/139416006/218dc62b-2aae-4b9e-88e5-b6c19a0935d5)
 
-![](C:\Users\SSAFY\AppData\Roaming\marktext\images\2023-09-12-10-58-33-image.png)
+##### (3) Template
+1) 앱폴더 안에 templates 폴더 생성 **(폴더명은 반드시 templates여야 하며 개발자가 직접 생성해야함)**
+2) templates 폴더 안에 파일 생성
+- Django에서 template를 인식하는 경로 규칙  
+  : app폴더 / templates (여기까지는 기본경로로 인식하기 때문에 이 지점 이후의 경로를 작성해야 함)  
+     (ex) (app폴더/templates)생략/articles/index.html
+    
