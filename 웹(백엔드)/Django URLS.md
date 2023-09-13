@@ -14,7 +14,8 @@
 
 - 작성법
   
-  <img src="file:///C:/Users/SSAFY/AppData/Roaming/marktext/images/2023-09-13-11-28-02-image.png" title="" alt="" data-align="left">
+![vairiable routing](https://github.com/JeongJonggil/TIL/assets/139416006/0cc8fa3d-c186-40a7-be98-d31d3123fed9)
+
   
   
 
