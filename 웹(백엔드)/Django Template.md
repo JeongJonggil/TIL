@@ -98,7 +98,7 @@
 
 - form에 입력된 데이터를 가져오는 방법
   
-  ![](C:\Users\SSAFY\AppData\Roaming\marktext\images\2023-09-13-10-55-32-image.png)
+![form 데이터를 가져오는 방법](https://github.com/JeongJonggil/TIL/assets/139416006/a8b3f7ad-d124-4f25-8cc7-b96bbe70a0c9)
 
 
 
