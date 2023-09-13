@@ -26,7 +26,8 @@
   
   (2) URL의 일치하는 부분까지 잘라내고, 남은 문자열 부분은 후속 처리를 위해 include된 URL로 전달
 
-![변경된 URL 구조.PNG](C:\Users\SSAFY\Desktop\변경된%20URL%20구조.PNG)
+![변경된 URL 구조](https://github.com/JeongJonggil/TIL/assets/139416006/d6206454-46f7-4c78-98f9-545203a643c3)
+
 
 
 
@@ -50,4 +51,5 @@
 
 ### 5. 주의사항
 
-![](C:\Users\SSAFY\AppData\Roaming\marktext\images\2023-09-13-14-52-39-image.png)
+![Trailing slashes](https://github.com/JeongJonggil/TIL/assets/139416006/3e63dee2-d96c-4d08-be17-6926827acc61)
+
