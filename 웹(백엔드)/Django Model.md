@@ -42,7 +42,8 @@ class Article(models.Model):  #Article 클래스는 models.Model클래스를 상
 
 - model 클래스의 변경사항(필드 생성, 수정 삭제 등)을 DB에 최종 반영하는 방법
   
-  ![](C:\Users\SSAFY\AppData\Roaming\marktext\images\2023-09-15-11-15-58-image.png)
+  ![migration과정](https://github.com/JeongJonggil/TIL/assets/139416006/05cc4d01-da90-4aed-9649-77e8380e4214)
+
 
 - **makemigrations**
   
