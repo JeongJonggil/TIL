@@ -2,21 +2,22 @@
 
 ### 1. ORM(Object-Relational-Mapping)
 
-- 객체 지향 프로그래밍 언어를 사용하여 호환되지 않는 유형의 시스템 간에 데이터를 변환하는 기술
+- 객체 지향 프로그래밍 언어를 사용하여 호환되지 않는 유형의 시스템 간에 데이터를 변환하는 기술  
 
-- Django(파이썬) ↔ **ORM** ↔ SQL(DB)  을 통해 서로 언어가 달라도 소통이 가능함
+- Django(파이썬) ↔ **ORM** ↔ SQL(DB)  을 통해 서로 언어가 달라도 소통이 가능함  
 
-### 2. QureySet API
+### 2. QureySet API  
 
-- ORM에서 데이터를 검색, 필터링, 정렬 및 그룹화 하는데 사용하는 도구
+- ORM에서 데이터를 검색, 필터링, 정렬 및 그룹화 하는데 사용하는 도구  
   
-  → **API를 사용하여 SQL이 아닌 python 코드로 데이터를 처리**
+  → **API를 사용하여 SQL이 아닌 python 코드로 데이터를 처리**  
 
-![](C:\Users\SSAFY\AppData\Roaming\marktext\images\2023-09-15-16-17-11-image.png)
+![QuerySet](https://github.com/JeongJonggil/TIL/assets/139416006/812af1cd-ce1c-4d6e-8d52-2a06820fd0b4)
 
-- 데이터가 여러 개면 QuerySet 형태, 1개면 Instance 형태로 반환함
+
+- 데이터가 여러 개면 QuerySet 형태, 1개면 Instance 형태로 반환함  
   
-  ※ all() 메서드로 받아오면 항상 QuerySet 형태로 반환됨(빈 데이터 일지라도)
+  ※ all() 메서드로 받아오면 항상 QuerySet 형태로 반환됨(빈 데이터 일지라도)  
 
 ### 3. Query
 
@@ -32,7 +33,7 @@
   
   → **순회가 가능한 데이터로써 1개 이상의 데이터를 불러와 사용할 수 있음**
 
-- QuerySet API 구문
+- QuerySet API 구문  
   
    : **Model class.Manager.Queryset API 형태 → (ex) Article.objects.all()**
 
@@ -60,49 +61,49 @@
 
     (ex)
 
-        → article = Article() 
-        → article.title = "first" 
-        → article.content = "django!"
-        **→ article.save()**
-
-(2) 인스턴스 생성과 동시에 데이터를 함께 입력하는 방법
+        → article = Article()   
+        → article.title = "first"   
+        → article.content = "django!"  
+        **→ article.save()**  
+  
+(2) 인스턴스 생성과 동시에 데이터를 함께 입력하는 방법  
 
     (ex)
 
-        → article = Article(title="second", content="django!")
-        **→ article.save()**
+        → article = Article(title="second", content="django!")  
+        **→ article.save()**  
 
-(3) QuerySet API 'create' 구문 사용 (save가 구문에 포함되어 있음)
+(3) QuerySet API 'create' 구문 사용 (save가 구문에 포함되어 있음)  
 
-     (ex)
+     (ex)  
 
-        → Article.objects.create(title='third', content='django!')
+        → Article.objects.create(title='third', content='django!')  
 
-### 8. Read (데이터 조회)
+### 8. Read (데이터 조회)  
 
-- all(조회 조건) : 전체 데이터 조회
-  → 데이터는 무조건 QuerrySet으로 반환 (데이터가 없어도 빈 쿼리셋 반환)
+- all(조회 조건) : 전체 데이터 조회  
+  → 데이터는 무조건 QuerrySet으로 반환 (데이터가 없어도 빈 쿼리셋 반환)  
 
 
 
-- get(조회 조건) : 단일 데이터 조회 
-  → 데이터가 없거나 여러 개인 경우 예외 발생
-  → 따라서 primary key와 같이 고유성을 보장하는 조회에서 사용해야 함
+- get(조회 조건) : 단일 데이터 조회   
+  → 데이터가 없거나 여러 개인 경우 예외 발생  
+  → 따라서 primary key와 같이 고유성을 보장하는 조회에서 사용해야 함  
   
 
-- filter(조회 조건) : 특정 조건 데이터들 조회 
-  → 데이터는 무조건 QuerrySet으로 반환 (데이터가 없어도 빈 쿼리셋 반환)
+- filter(조회 조건) : 특정 조건 데이터들 조회   
+  → 데이터는 무조건 QuerrySet으로 반환 (데이터가 없어도 빈 쿼리셋 반환)  
 
-### 9. Update (데이터 수정)
+### 9. Update (데이터 수정)  
 
-- 데이터 수정 절차
+- 데이터 수정 절차  
   
-   : 데이터 조회 → 데이터 수정 → 데이터 저장 순으로 이루어져야 함
+   : 데이터 조회 → 데이터 수정 → 데이터 저장 순으로 이루어져야 함  
 
-### 10. Delete (데이터 삭제)
+### 10. Delete (데이터 삭제)  
 
-- 삭제하려는 데이터 조회 후 delete메서드 호출 (저장을 안해도 지워짐)
+- 삭제하려는 데이터 조회 후 delete메서드 호출 (저장을 안해도 지워짐)  
   
-  → 현업에서는 위처럼 데이터를 바로 삭제하지 않고 is visible과 같은 방법으로 데이터를 클라이언트가 보이지 않도록 처리해 놓음, 이후 특정 주기를 가지고 데이터를 삭제함
+  → 현업에서는 위처럼 데이터를 바로 삭제하지 않고 is visible과 같은 방법으로 데이터를 클라이언트가 보이지 않도록 처리해 놓음, 이후 특정 주기를 가지고 데이터를 삭제함  
 
 
