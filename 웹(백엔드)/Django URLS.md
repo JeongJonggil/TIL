@@ -28,9 +28,6 @@
 
 ![변경된 URL 구조](https://github.com/JeongJonggil/TIL/assets/139416006/d6206454-46f7-4c78-98f9-545203a643c3)
 
-
-
-
 ### 4. Naming URL patterns
 
 - URL에 이름을 지정하는 것 (path 함수의 name 인자를 정의해서 사용)
@@ -47,9 +44,6 @@
 
         → 사용법 :  app_name = '이름'
 
-
-
 ### 5. 주의사항
 
 ![Trailing slashes](https://github.com/JeongJonggil/TIL/assets/139416006/3e63dee2-d96c-4d08-be17-6926827acc61)
-

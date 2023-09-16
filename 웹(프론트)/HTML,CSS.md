@@ -25,8 +25,6 @@
 
 ---
 
-
-
 # 2. CSS
 
 ### (1) 적용 방식
@@ -49,9 +47,11 @@
 - 상속 되지 않는 속성 : Box model, position 관련 요소  
 
 ---
+
 # 3. CSS Layout
-### ※ 사용빈도 flex > position > box model,  중요순위 box-model > flex > position  
-  
+
+### ※ 사용빈도 flex > position > box model,  중요순위 box-model > flex > position
+
 ### (1) CSS Box Model
 
 #### : 모든 HTML 요소를 사각형 박스로 표현하는 개념
@@ -62,23 +62,26 @@
 
 <img title="" src="https://github.com/JeongJonggil/TIL/assets/139416006/ed415a1f-20c2-466e-97fd-d0a647a70ee6" alt="image" width="734" data-align="left">
 
-
-
 ### (2) CSS Position
 
 #### - 유형 : static, relative, absolute, fixed, sticky
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **※ position : absolute -> 가장 가까운 부모 중"static"이 아닌 부모를 기준으로 움직임**
 
 #### - 요소를 Normal Flow에서 제거하여 다른 위치로 배치하는 것
 
-### (3) CSS Flexbox 
-####  : 요소를 행과 열 형태로 배치하는 1차원 레이아웃 방식  
+### (3) CSS Flexbox (일반적으로 가장 많이 이용하는 방식)
+
+#### : 요소를 행과 열 형태로 배치하는 1차원 레이아웃 방식
+
     *Flexbox는 2가지만 기억하면 사용하기 쉬움
     1. main axis(주 축)을 찾아라
     2. 배치는 Flex Container를 조작해라 
 
-### (4) CSS Grid 
-####  : 요소를 12개의 column으로 분배하여 배치하는 2차원 레이아웃 방식  
+### (4) CSS Grid
+
+#### : 요소를 12개의 column으로 분배하여 배치하는 2차원 레이아웃 방식
+
     *Grid는 3가지만 기억하면 사용하기 쉬움
     1. 12개의 column을 적절히 분배하여 레이아웃을 배치하는 것
     2. 2차원 배열이기 때문에 flexbox에서 row가 추가된 세팅이라고 생각하면 쉬움

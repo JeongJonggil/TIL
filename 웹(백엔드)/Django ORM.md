@@ -6,14 +6,13 @@
 
 - Django(파이썬) ↔ **ORM** ↔ SQL(DB)  을 통해 서로 언어가 달라도 소통이 가능함  
 
-### 2. QureySet API  
+### 2. QureySet API
 
 - ORM에서 데이터를 검색, 필터링, 정렬 및 그룹화 하는데 사용하는 도구  
   
   → **API를 사용하여 SQL이 아닌 python 코드로 데이터를 처리**  
 
 ![QuerySet](https://github.com/JeongJonggil/TIL/assets/139416006/812af1cd-ce1c-4d6e-8d52-2a06820fd0b4)
-
 
 - 데이터가 여러 개면 QuerySet 형태, 1개면 Instance 형태로 반환함  
   
@@ -39,13 +38,13 @@
 
 - Django ORM을 통해 만들어진 자료형
 
-- 단, 데이터베이스가 단일한 객체를 반환 할 때는 QuerySet이 아닌 모델(Class)의 인스턴스로 반환됨
+- 단, 데이터베이스가 단일한 객체를 반환 할 때는 QuerySet이 아닌 모델(Class)의 인스턴스로 반환됨 
 
 ### 5. QuerySet API 사용을 도와주는 라이브러리
 
 - pip install ipython
 
-- pip install django-extensions → 프로젝트 setting.py에 django-extenstions 등록해야됨
+- pip install django-extensions → **프로젝트 setting.py에 django-extenstions 등록해야됨**
 
 ### 6. Django shell
 
@@ -65,7 +64,7 @@
         → article.title = "first"   
         → article.content = "django!"  
         **→ article.save()**  
-  
+
 (2) 인스턴스 생성과 동시에 데이터를 함께 입력하는 방법  
 
     (ex)
@@ -79,31 +78,36 @@
 
         → Article.objects.create(title='third', content='django!')  
 
-### 8. Read (데이터 조회)  
+### 8. Read (데이터 조회)
 
-- all(조회 조건) : 전체 데이터 조회  
+- all(인자) : 전체 데이터 조회  
   → 데이터는 무조건 QuerrySet으로 반환 (데이터가 없어도 빈 쿼리셋 반환)  
 
-
-
-- get(조회 조건) : 단일 데이터 조회   
+- get(인자) : 단일 데이터 조회   
   → 데이터가 없거나 여러 개인 경우 예외 발생  
   → 따라서 primary key와 같이 고유성을 보장하는 조회에서 사용해야 함  
+
+- filter(인자) : 특정 조건 데이터들 조회   
+  → 데이터는 무조건 QuerrySet으로 반환 (데이터가 없어도 빈 쿼리셋 반환) 
+
+- **Field lookup**
   
+  → 사용법 : ____(언더바 2개)
+  
+  → 특정 레코드에 대한 세부 조건을 설정하는 방법
+  
+  → QuerySet 메서드 filter, exclude, get에 대한 키워드 인자로 지정됨
+  
+  (ex) Article.objects.filter(content___contains = 'dja')
 
-- filter(조회 조건) : 특정 조건 데이터들 조회   
-  → 데이터는 무조건 QuerrySet으로 반환 (데이터가 없어도 빈 쿼리셋 반환)  
-
-### 9. Update (데이터 수정)  
+### 9. Update (데이터 수정)
 
 - 데이터 수정 절차  
   
    : 데이터 조회 → 데이터 수정 → 데이터 저장 순으로 이루어져야 함  
 
-### 10. Delete (데이터 삭제)  
+### 10. Delete (데이터 삭제)
 
 - 삭제하려는 데이터 조회 후 delete메서드 호출 (저장을 안해도 지워짐)  
   
   → 현업에서는 위처럼 데이터를 바로 삭제하지 않고 is visible과 같은 방법으로 데이터를 클라이언트가 보이지 않도록 처리해 놓음, 이후 특정 주기를 가지고 데이터를 삭제함  
-
-
