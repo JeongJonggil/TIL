@@ -21,5 +21,4 @@
 
 
 ### 3. Bootstrap Spacing class
-
-<img title="" src="file:///C:/Users/정종길/AppData/Roaming/marktext/images/2023-09-16-14-14-19-image.png" alt="" data-align="left">
+![사진1](https://github.com/JeongJonggil/TIL/assets/139416006/519bda4a-4fa2-49d1-abbf-0a1174c986de)
