@@ -44,7 +44,7 @@
 
 - pip install ipython
 
-- pip install django-extensions → **프로젝트 setting.py에 django-extenstions 등록해야됨**
+- pip install django-extensions → **프로젝트 setting.py에 django_extenstions 등록해야됨**
 
 ### 6. Django shell
 
