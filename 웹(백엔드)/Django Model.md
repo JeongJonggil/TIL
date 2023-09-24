@@ -77,11 +77,11 @@ class Article(models.Model):  #Article 클래스는 models.Model클래스를 상
 
   (1) 1번은 현재 대화를 유지하면서 직접 기본값을 입력하는 방법
 
-- 1번 선택 후 아무것도 입력하지 않고 enter 누르면 django가 제안하는 기본 값으로 설정 됨(일반적으로 권장하는 방법)
+    - 1번 선택 후 아무것도 입력하지 않고 enter 누르면 django가 제안하는 기본 값으로 설정 됨(일반적으로 권장하는 방법)
   
   (2) 2번은 현재 대화에서 나간 후 models.py에 기본 값 관련 직접 설정하는 코드 작성
 
-- migrations 과정 종료 후 2번 째 migration 파일이 생성됨
+    - migrations 과정 종료 후 2번 째 migration 파일이 생성됨
 
 - **django는 새로 생성되는 migration을 쌓아가면서 추후 문제가 생겼을 시 복구하거나 되돌릴 수 있도록 함 (이전 migration이 이후에 있는 migration에 영향을 줌으로 함부로 조작, 삭제 X)** 
 
