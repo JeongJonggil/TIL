@@ -89,22 +89,26 @@ class ArticleForm(forms.ModelForm):
 
 ##### 	(5) ModelForm을 적용한 create 로직
 
-![1](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20230926094557397.png)
+![1](https://github.com/JeongJonggil/TIL/assets/139416006/96a13f94-54c8-4580-a108-a9064c552409)
+
 
 ##### 		●  if form.is_valid(): 를 통과하지 못했을 때는 context 하기 부분이 실행되는데 이 때 자동으로 vaild검사에서 실패힌 이유를 같이 html page에 rendering해줌. 그냥 ModelForm의 특성임
 
 ##### 	(6) ModelForm을 적용한 create 로직
 
-![2](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20230926102655789.png)
+![2](https://github.com/JeongJonggil/TIL/assets/139416006/e556aeee-230f-4234-b5f6-b5fd3c5c8a3e)
+
 
 ##### 	(7) ModelForm을 적용한 update 로직
 
-![3](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20230926100536428.png)
+![3](https://github.com/JeongJonggil/TIL/assets/139416006/ab755998-2be6-46a1-9f92-c6e265a55ab2)
 
-​	(8) save() 메서드
 
-![4](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20230926102935599.png)
+​#####	(8) save() 메서드
+
+![4](https://github.com/JeongJonggil/TIL/assets/139416006/aad6260d-3fea-4957-8ee8-fee48c21f07b)
+
 
 ### 5. HTTP request method 차이점을 활용한 view 함수 구조 변경
 
-![5](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20230926103907287.png)
+![5](https://github.com/JeongJonggil/TIL/assets/139416006/024ecfc1-716e-45cc-8e3a-811cba0b21b9)
