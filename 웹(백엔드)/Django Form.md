@@ -18,7 +18,7 @@
   1. app에 forms.py 파일 생성
   
   2.forms.py에 하기 코드 작성
-  from Django import forms
+  from django import forms
   
   class ArticleForm(forms.Form):
   	title = forms.CharField(max_length=10)
