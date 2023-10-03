@@ -72,3 +72,82 @@ STATICFILES_DIR = [
 > **생성되는 static 파일의 URL : URL + STATIC_URL + 정적파일 경로**
 > 	**(ex) http://127.0.0.1:8000/static/articles/sample-1.png** 
 
+
+
+### 5. Media Files
+
+- ##### 사용자가 웹에서 업로드하는 정적 파일(user-uploaded)
+
+- ImageField() : 이미지 업로드에 사용하는 모델 필드 
+
+  ##### → 이미지 객체가 직접 저장되는 것이 아닌 '이미지 파일의 경로'가 문자열로 DB에 저장됨
+
+
+
+### 6. Media File 준비
+
+- settings.py에 MEDIA_ROOT, MEDIA_URL 설정
+
+  > MEDIA_ROOT : 미디어 파일들이 위치하는 디렉토리의 절대 경로
+  >
+  > ​				→ 클라이언트가 미디어 파일을 올렸을 때, 해당 미디어 파일을 어디 폴더에 놔둘껀지를 결정하는 경로 
+  >
+  > MEDIA_URL : MEDIA_ROOT에서 제공되는 미디어 파일에 대한 주소를 생성(STATIC_URL과 동일한 역할)
+  >
+  > ```python
+  > #settings.py
+  > 
+  > MEDIA_ROOT = BASE_DIR/'media'  #ROOT에는 최상위 경로 하나만 작성해야함, 다른 경로가 있을경우 공식문서 참조
+  > MEDIA_URL = 'media/'
+  > ```
+  >
+  > 
+
+- 작성한 MEDIA_ROOT와 MEDIA_URL에 대한 urls.py에 url  지정 **(코드 외울 필요 없고 공식문서에서 복사해서 쓰기)**
+
+  > ```python
+  > #urls.py
+  > 
+  > from django.conf import settings
+  > from django.conf.urls.static import static
+  > 
+  > urlpatterns = [
+  >  ~~~
+  > ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+  > 
+  > #urlpatterns 안에 넣어서 작성해도 되는데 관리적 측면을 고려하여 바깥에 + 로 작성하는걸 권장함
+  > ```
+
+- model에 ImageField 추가하기
+
+  > ```python
+  > #models.py
+  > 
+  > class Article(models.Model):
+  > 	title = models.CharField(max_length=10)
+  >     image = models.ImageField(blank=True)
+  > 	content = models.TextField()
+  >     
+  >     # ImageField는 기존 필드 사이에 작성해도 실제 테이블 생성 시에는 가장 우측(뒤)에 추가됨
+  >     # blank = True 옵션은 클라이언트가 이미지 업로드란을 공백으로 업로드 해도 괜찮다는 옵션
+  > ```
+
+- Pillow 라이브러리 다운 ($pip install Pillow)
+
+  > ImageField를 사용하기 위한 라이브러리 정도로 생각하면 됨
+
+- html <form> 태그에 enctype="multipart/form-data" 속성 추가하기
+
+  > form은 기본적으로 문자열 밖에 처리를 못하기 때문에 enctype="multipart/form-data" 속성 추가
+
+- view 함수에서 form 데이터를 처리하는 부분에 request.files 추가하기
+
+  > imamge file은 request.post말고 request.files 로 데이터가 전송됨
+  >
+  > ```python
+  > #views.py
+  > 
+  > form = ArticleForm(request.POST, request.files)
+  > ```
+  >
+  > 
