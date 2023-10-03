@@ -112,3 +112,6 @@ class ArticleForm(forms.ModelForm):
 ### 5. HTTP request method 차이점을 활용한 view 함수 구조 변경
 
 ![5](https://github.com/JeongJonggil/TIL/assets/139416006/024ecfc1-716e-45cc-8e3a-811cba0b21b9)
+
+![6](https://github.com/JeongJonggil/TIL/assets/139416006/a5959004-7d1f-4362-b9a6-902105121ec6)
+
