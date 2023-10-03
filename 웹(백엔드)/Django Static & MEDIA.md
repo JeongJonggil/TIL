@@ -136,7 +136,7 @@ STATICFILES_DIR = [
 
   > ImageField를 사용하기 위한 라이브러리 정도로 생각하면 됨
 
-- html <form> 태그에 enctype="multipart/form-data" 속성 추가하기
+- html form 태그에 enctype="multipart/form-data" 속성 추가하기
 
   > form은 기본적으로 문자열 밖에 처리를 못하기 때문에 enctype="multipart/form-data" 속성 추가
 
