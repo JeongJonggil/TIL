@@ -1,4 +1,4 @@
-# Django Static & MEDIA
+# Django Static & MediA
 
 ### 0. 원리
 
@@ -80,11 +80,15 @@ STATICFILES_DIR = [
 
 - ImageField() : 이미지 업로드에 사용하는 모델 필드 
 
-  ##### → 이미지 객체가 직접 저장되는 것이 아닌 '이미지 파일의 경로'가 문자열로 DB에 저장됨
+- 이미지 객체가 직접 저장되는 것이 아닌 '이미지 파일의 경로'가 문자열로 DB에 저장
+
+- ##### 성능 측면에서, 직접 파일을 저장하면 DB 크기가 급격하게 증가하여 성능이 저하됨. 따라서 파일 자체는 파일시스템에 별도로 저장하고 DB에는 그 파일에 대한 문자열 경로만 저장함
+
+- ##### 유지 보수 관점에서도, 만약 db에 직접 파일을 저장해버리면 파일 수정 시 db를 직접 조작해야함. 그러나 db에 경로만 저장되어 있다면 파일시스템에서만 파일을 수정하면 됨
 
 
 
-### 6. Media File 준비
+### 6. Media File 업로드 받는 방법
 
 - settings.py에 MEDIA_ROOT, MEDIA_URL 설정
 
@@ -97,7 +101,7 @@ STATICFILES_DIR = [
   > ```python
   > #settings.py
   > 
-  > MEDIA_ROOT = BASE_DIR/'media'  #ROOT에는 최상위 경로 하나만 작성해야함, 다른 경로가 있을경우 공식문서 참조
+  > MEDIA_ROOT = BASE_DIR/'media'  #ROOT에는 최상위 경로 하나만 작성해야함, 최상의 경로 내에 추가 경로를 만들고 싶으면 models.py에서 ImageField에 upload_to 속성 사용
   > MEDIA_URL = 'media/'
   > ```
   >
@@ -140,14 +144,25 @@ STATICFILES_DIR = [
 
   > form은 기본적으로 문자열 밖에 처리를 못하기 때문에 enctype="multipart/form-data" 속성 추가
 
-- view 함수에서 form 데이터를 처리하는 부분에 request.files 추가하기
+- view 함수에서 form 데이터를 처리하는 부분에 request.FILES 추가하기
 
   > imamge file은 request.post말고 request.files 로 데이터가 전송됨
   >
   > ```python
   > #views.py
   > 
-  > form = ArticleForm(request.POST, request.files)
+  > form = ArticleForm(request.POST, request.FILES)
   > ```
   >
-  > 
+
+### 7. MEDIA FILE 제공하기
+
+- 클라이언트가 업로드한 미디어 파일을 html 파일에서 출력하려면 {{ xx.xx.url }} 방식으로 미디어 파일의 url 경로를 호출함
+
+  ![1](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20231004163722574.png)
+
+- 업로드 이미지 수정
+
+![2](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20231004163751913.png)
+
+![3](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20231004163816948.png)
