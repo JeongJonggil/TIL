@@ -30,11 +30,13 @@
 
 ##### 		● 쿠키 사용 예시
 
-![1](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20231004102044441.png)
+![1](https://github.com/JeongJonggil/TIL/assets/139416006/95e7cfa7-8fdb-4db2-a29f-b062ae97e999)
+
 
 ##### 			● 쿠키 사용 원리
 
-![2](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20231004102404388.png)
+![2](https://github.com/JeongJonggil/TIL/assets/139416006/b4aee5b1-42a6-4ac2-9633-4662f8606b47)
+
 
 ​			● 쿠키 사용 목적
 
@@ -54,7 +56,8 @@
 
 ​		● 세션 작동 원리
 
-![3](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20231004103831862.png)
+![3](https://github.com/JeongJonggil/TIL/assets/139416006/280a433d-eae7-4bfc-a939-948361bcb6f5)
+
 
 ### 4. 쿠키(Cookie) & 세션(Session) 요약
 
@@ -68,7 +71,8 @@
 
 - django에서는  세션을 저장하고 key를 발급하는 등 일련의 과정들을 내부적으로 처리해주기 때문에 우리가 구현할 필요는 없음. 우리는 결과를 이해하고 보기만 하면 됨
 
-![4](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20231004105232647.png)
+![4](https://github.com/JeongJonggil/TIL/assets/139416006/a71bf95f-67cc-4133-a1f6-c5d24350fc12)
+
 
 ### 5. 인증(Authentication)
 
@@ -84,11 +88,12 @@
 
 - ##### Custom User Model 대체하기
 
-  ![5](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20231004112049448.png)
+![5](https://github.com/JeongJonggil/TIL/assets/139416006/7ebd95e4-6130-4e6c-a961-04e95341c8f2)
 
-![6](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20231004112106111.png)
+![6](https://github.com/JeongJonggil/TIL/assets/139416006/23e9b642-3851-4bf7-a16c-715f2bdd192a)
 
-![7](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20231004112124431.png)
+![7](https://github.com/JeongJonggil/TIL/assets/139416006/d0204305-6def-4b65-a86c-24b36dbc5b49)
+
 
 - #### 주의사항
 
@@ -96,7 +101,7 @@
 
   : 그래서 class User(AbstractUser): 를 pass로 선언해놓고 시작하는 거임. 미리 pass로라도 선언을 해놓고 진행하기 때문에 프로젝트 중간이라도 필드에 대한 수정이 가능함. 만약 Custom User Model 를 잊고 프로젝트가 이미 진행되고 있을 경우 데이터베이스 초기화 후 Custom User Model 생성 후 진행하면 됨
 
-![8](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20231004113939814.png)
+![8](https://github.com/JeongJonggil/TIL/assets/139416006/e3a3a661-cecd-4daa-92f9-ab7dda90764a)
 
 ### 7. Login
 
@@ -106,7 +111,7 @@
 
 - ##### 로그인 페이지 작성(create-view 함수와 거의 동일함)
 
-![9](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20231004115914827.png)
+![9](https://github.com/JeongJonggil/TIL/assets/139416006/891b336f-2707-4127-90da-59e68e894ba8)
 
 - AuthenticationForm() : 로그인 인증에 사용할 데이터를 입력받는 built-in form
 - get-user() : AuthenticationForm의 인스턴스 메서드
@@ -124,7 +129,7 @@
 
 - ##### context processors : view함수에서 따로 context로 넘기지 않아도 settings.py-templates에 미리 load되어 호출이 가능한 변수들
 
-![10](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20231004141941609.png)
+![10](https://github.com/JeongJonggil/TIL/assets/139416006/58b56c40-f763-400b-a90b-0409342b80b1)
 
 ### 10.  참고(Abstract base classes, 추상 기본 클래스)
 
