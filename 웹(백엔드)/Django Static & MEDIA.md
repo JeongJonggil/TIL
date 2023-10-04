@@ -158,11 +158,11 @@ STATICFILES_DIR = [
 ### 7. MEDIA FILE 제공하기
 
 - 클라이언트가 업로드한 미디어 파일을 html 파일에서 출력하려면 {{ xx.xx.url }} 방식으로 미디어 파일의 url 경로를 호출함
+![1](https://github.com/JeongJonggil/TIL/assets/139416006/16355ad9-06d9-4e4f-9d27-c03746769850)
 
-  ![1](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20231004163722574.png)
 
 - 업로드 이미지 수정
 
-![2](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20231004163751913.png)
+![2](https://github.com/JeongJonggil/TIL/assets/139416006/c1368645-1c7c-424a-8bc1-2d66e288a3d3)
 
-![3](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20231004163816948.png)
+![3](https://github.com/JeongJonggil/TIL/assets/139416006/a5761bcb-c764-4b7b-9a6d-c42639dc0711)
