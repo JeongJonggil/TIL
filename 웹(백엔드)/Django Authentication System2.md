@@ -6,19 +6,20 @@
 
 - UserCreationForm() : 회원 가입시 사용자 입력 데이터를 받을 built-in ModelForm
 
-  ![1](C:\Users\SSAFY\Desktop\images\Django Authentication System2\1.PNG)
+![1](https://github.com/JeongJonggil/TIL/assets/139416006/616123ee-c20d-4b0a-87c7-e21b0a1a49cc)
 
-![2](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20231005090624692.png)
+![2](https://github.com/JeongJonggil/TIL/assets/139416006/d92f7913-f21b-4769-8f44-dcff8d4fb7ce)
 
-![3](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20231005092820742.png)
+![3](https://github.com/JeongJonggil/TIL/assets/139416006/091ef6f0-9603-4421-a2f2-d7378ee545ed)
 
-![4](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20231005092900566.png)
+![4](https://github.com/JeongJonggil/TIL/assets/139416006/8a0a406b-abb8-4862-8afe-5162f1ab797f)
 
-![5](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20231005092926375.png)
+![5](https://github.com/JeongJonggil/TIL/assets/139416006/86f3682e-b280-4626-881b-5b9734dcb0d2)
 
-![6](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20231005093210557.png)
+![6](https://github.com/JeongJonggil/TIL/assets/139416006/caca4f55-6757-49e0-83c3-5559a4dbb9cd)
 
-![7](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20231005093234084.png)
+![7](https://github.com/JeongJonggil/TIL/assets/139416006/c4f1b1cf-7222-47dd-a1ab-af9c979411f6)
+
 
 > User 모델을 직접 참조하게 되면 User모델에 변경사항이 생겼을 떄 해당 모델을 참조하고 있는 부분들을 모두 직접 수정해야 됨. get_user_model() 을 통해 간접적으로 모델을 참조함으로써 모델에 수정사항이 생겼을때 이를 참조하고 있는 부분들을 수정해야하는 불편함이 줄어듬
 
@@ -28,22 +29,22 @@
 
 - User 객체를 Delete 하는 과정
 
-![8](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20231005093902185.png)
+![8](https://github.com/JeongJonggil/TIL/assets/139416006/ffd8c6af-8416-47c8-90cc-0ff018b7acd0)
 
 ### 3. 회원정보 수정
 
 - User 객체를 Update 하는 과정
 - UserChangeForm() : 회원정보 수정 시 사용자 입력 데이터를 받을 built-in ModelForm
 
-![9](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20231005100640362.png)
+![9](https://github.com/JeongJonggil/TIL/assets/139416006/94b72cb1-ff0d-4cac-b42e-d3bd6e7167da)
 
-![10](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20231005100746789.png)
+![10](https://github.com/JeongJonggil/TIL/assets/139416006/c484adf0-017f-44f0-a4c8-3e18a1db3658)
 
-![11](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20231005100923657.png)
+![11](https://github.com/JeongJonggil/TIL/assets/139416006/d7eef44d-6df3-4753-9e7c-8199b52a3067)
 
-![12](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20231005101035283.png)
+![12](https://github.com/JeongJonggil/TIL/assets/139416006/dd08f7e2-abf7-4368-8565-908d21689841)
 
-![13](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20231005101302867.png)
+![13](https://github.com/JeongJonggil/TIL/assets/139416006/dd2f8e87-9aa5-4491-840a-6b4c9bd8cd08)
 
 
 
@@ -52,17 +53,18 @@
 - 인증된 사용자의 Session 데이터를 Update 하는 과정
 - PasswordChangeForm() : 비밀번호 변경 시 사용자 입력 데이터를 받을 built-in Form
 
-![14](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20231005102239577.png)
+![14](https://github.com/JeongJonggil/TIL/assets/139416006/9f153ee3-4530-4f44-99a4-4b4ea538f6df)
 
-![15](C:\Users\SSAFY\Desktop\images\Django Authentication System2\image-20231005103306078.png)
+![15](https://github.com/JeongJonggil/TIL/assets/139416006/b6afad95-c3c4-4efa-a555-1594632ef2db)
 
-![16](C:\Users\SSAFY\Desktop\images\Django Authentication System2\16.PNG)
+![16](https://github.com/JeongJonggil/TIL/assets/139416006/c2833cc5-27d1-4f75-9174-f259cfd91216)
 
-![17](C:\Users\SSAFY\Desktop\images\Django Authentication System2\image-20231005103854924.png)
+![17](https://github.com/JeongJonggil/TIL/assets/139416006/f73ccd2b-9e73-4d1b-bf26-fac15f06efaa)
 
-![18](C:\Users\SSAFY\Desktop\images\Django Authentication System2\image-20231005104032215.png)
+![18](https://github.com/JeongJonggil/TIL/assets/139416006/acbe1739-d055-4822-9579-f2101313f5bb)
 
-![19](C:\Users\SSAFY\Desktop\images\Django Authentication System2\image-20231005104141475.png)
+![19](https://github.com/JeongJonggil/TIL/assets/139416006/14918c03-22f6-449d-ae59-95935d7aafff)
+
 
 ### 5. 인증된 사용자에 대한 접근 제한
 
@@ -78,12 +80,12 @@
 
 - #### is_authenticated 적용하기
 
-![20](C:\Users\SSAFY\Desktop\images\Django Authentication System2\image-20231005104833021.png)
+![20](https://github.com/JeongJonggil/TIL/assets/139416006/ea786213-467b-42e2-b842-156d265b796b)
 
-![21](C:\Users\SSAFY\Desktop\images\Django Authentication System2\image-20231005104900915.png)
+![21](https://github.com/JeongJonggil/TIL/assets/139416006/79bc1809-2bc5-45d3-b2fd-3ff1ff0e240f)
 
 - ##### login_required 적용하기
 
-- ##### ![22](C:\Users\SSAFY\Desktop\images\Django Authentication System2\image-20231005105436091.png)
+![22](https://github.com/JeongJonggil/TIL/assets/139416006/601692fd-cb8e-4eed-a855-de894085be28)
 
-![23](C:\Users\SSAFY\Desktop\images\Django Authentication System2\image-20231005105458960.png)
+![23](https://github.com/JeongJonggil/TIL/assets/139416006/7d74edc0-e8d4-4d11-a2bc-e137d1bed67f)
