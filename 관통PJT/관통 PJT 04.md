@@ -135,7 +135,8 @@ def example(request):
     <h1> Pandas 써보기 </h1>
     <table>
         <tr>
-            {{ df.columns }}
+            {% for column in df.columns %}
+            <th> {{ column }} </th>
         </tr>
         {% for row in df.values  %}
         <tr>
