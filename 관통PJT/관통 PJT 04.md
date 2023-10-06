@@ -48,6 +48,11 @@ import base64
 # 버퍼 : 임시 저장 공간. 파일 시스템과 유사하지만, 실제로 파일로 만들지 않고 메모리 단에서 작업할 수 있음.
 # base64 : 텍스트 ↔ 이진 데이터를 변환할 수 있는 모듈
 
+# 참고. 터미널 에러
+# Userwarning: Starting a Matplotlib GUI outside of the main thread will likely fail.
+# PLT를 만드는 곳과 화면에 그리는 곳이 달라서 오류가 날 수 있다고 경고를 주는곳.
+# 백엔드를 Agg로 설정하여 해결
+plt.switch_backend('Agg')
 
 def index(request):
     x = [1,2,3,4]
@@ -78,10 +83,6 @@ def index(request):
     }
 
     return render(request,'index.html',context)
-
-# 참고. 터미널 에러
-# Userwarning: Starting a Matplotlib GUI outside of the main thread will likely fail.
-# PLT를 만드는 곳과 화면에 그리는 곳이 달라서 오류가 날 수 있다고 경고를 주는곳.
 
 ```
 
