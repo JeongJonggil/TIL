@@ -166,3 +166,28 @@ STATICFILES_DIR = [
 ![2](https://github.com/JeongJonggil/TIL/assets/139416006/c1368645-1c7c-424a-8bc1-2d66e288a3d3)
 
 ![3](https://github.com/JeongJonggil/TIL/assets/139416006/a5761bcb-c764-4b7b-9a6d-c42639dc0711)
+  
+  
+### 8. 썸네일 설정하기(media파일)
+  
+- 기본 Media 파일 제공하는 방법과 동일함.  
+    (1) 원본 avatar 이미지를 기반으로 썸네일을 동적으로 생성합니다. 실제 원본 파일을 바탕으로 썸네일 파일을 만들어 DB 저장후 업로드 하는 방법도 있음 
+	:  썸네일을 동적으로 생성하는 오버헤드를 줄일 수 있음. (※ 오버헤드 :어떤 작업을 수행하기 위해 필요한 추가적인 자원이나 시간. 주된 작업의 수행 외에 필요한 처리량이나 불가피하게 발생하는 부가적인 작업)
+
+    (2) 원본 이미지를 기반으로 썸네일을 동적으로 생성하는 방법
+  	: django-imagekit의 ImageSpecField는 실제 데이터베이스 필드가 아님. 대신에 해당 필드는 원본 이미지 필드에 대한 동적 변환을 정의하는 역할을 함  
+  ```
+  from django.db import models
+from imagekit.models import ImageSpecField
+from imagekit.processors import ResizeToFill
+
+class Profile(models.Model):
+    avatar = models.ImageField(upload_to='avatars/')
+    avatar_thumbnail = ImageSpecField(source='avatar',
+                                      processors=[ResizeToFill(100, 100)],
+                                      format='JPEG',
+                                      options={'quality': 60})
+```
+
+
+
