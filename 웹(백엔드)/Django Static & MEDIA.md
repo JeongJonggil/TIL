@@ -179,7 +179,8 @@ STATICFILES_DIR = [
   **(2) 원본 이미지를 기반으로 썸네일을 동적으로 생성하는 방법**  
   	: django-imagekit의 ImageSpecField는 실제 데이터베이스 필드가 아님. 대신에 해당 필드는 원본 이미지 필드에 대한 동적 변환을 정의하는 역할을 함  
 ```
-  from django.db import models
+#models.py
+from django.db import models
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
 
