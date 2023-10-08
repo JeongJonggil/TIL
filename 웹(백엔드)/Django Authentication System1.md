@@ -121,8 +121,9 @@
 
 - logout(request) : 현재 요청에 대한 Session Data를 DB에서 삭제, 클라이언트의 쿠키에서도 Session Id를 삭제
 
+![로그아웃](https://github.com/JeongJonggil/TIL/assets/139416006/0b4b1dae-75f3-41a5-b5c6-6ca1f4c2b952)  
 
-
+  
 ### 9. Template with Authentication data
 
 - ##### context processors : view함수에서 따로 context로 넘기지 않아도 settings.py-templates에 미리 load되어 호출이 가능한 변수들
