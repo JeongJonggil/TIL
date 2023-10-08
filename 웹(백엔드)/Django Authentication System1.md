@@ -110,7 +110,8 @@
 - ##### 로그인 페이지 작성(create-view 함수와 거의 동일함)
 
 ![9](https://github.com/JeongJonggil/TIL/assets/139416006/891b336f-2707-4127-90da-59e68e894ba8)
-
+  
+- 위 이미지에는 없는데 from django.contrib.auth.forms import AuthenticationForm 후 써야됨
 - AuthenticationForm() : 로그인 인증에 사용할 데이터를 입력받는 built-in form
 - get-user() : AuthenticationForm의 인스턴스 메서드
       → 유효성 검사를 통과했을 경우 로그인 한 사용자 객체를 반환
