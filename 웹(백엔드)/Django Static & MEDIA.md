@@ -166,9 +166,22 @@ STATICFILES_DIR = [
 ![2](https://github.com/JeongJonggil/TIL/assets/139416006/c1368645-1c7c-424a-8bc1-2d66e288a3d3)
 
 ![3](https://github.com/JeongJonggil/TIL/assets/139416006/a5761bcb-c764-4b7b-9a6d-c42639dc0711)
+
+
+### 8. media-Image파일 크기 Resizing하여 DB저장하는 방법  
+  
+- imagekit 패키지의 ProcessedImageField + ResizeToFill 사용  
+```
+# models.py
+from imagekit.models import ImageSpecField,ProcessedImageField
+from imagekit.processors import ResizeToFill
+
+class Memo(models.Model):
+    image = ProcessedImageField(blank=True, processors=[ResizeToFill(200,200)])
+```
   
   
-### 8. 썸네일 설정하기(media파일)
+### 9. 썸네일 설정하기(media파일)
   
 - 기본 Media 파일 제공하는 방법과 동일함.  
   
