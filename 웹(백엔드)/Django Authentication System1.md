@@ -178,7 +178,7 @@ def login(request):
 </form>
 ```
   
-  (2) {{ request.path }} : login_required 없이 현재 보고있던 페이지에서 로그인 버튼을 눌렀을 때 현재 url을 저장하는 방법.
+  (2) {{ request.path }} : login_required 없이 현재 보고있던 페이지에서 로그인 버튼을 눌렀을 때 현재 url을 저장하는 방법.  
       ※ Django 프로젝트를 시작할 때 기본 settings.py에 이 context processor가 이미 포함되어 있기 때문에, Django의 template context에서는 기본적으로 request 객체에 접근할 수 있음. 따라서 템플릿 내에서 request.path를 직접 사용하면 현재 요청의 URL 경로를 얻을 수 있음.  
       
 ```
