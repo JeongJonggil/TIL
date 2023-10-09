@@ -138,3 +138,25 @@
 - 다른 자식 클래스를 찍어내기 위한 클래스로, 자식 클래스를 찍어내기 위한 틀
 - migrate를 해도 table이 만들어지지 않도록 설계되어 있으며, 대신 다른 모델의 기본 클래스로 사용되는 경우 해당 필드가 하위 클래스의 필드에 추가됨.
 - 파이썬에서 보통 Abstract가 붙어있으면 추상 기본 클래스임
+
+### 11. login_required 데코레이터
+- Django의 login_required 데코레이터를 사용하면, 로그인되지 않은 사용자가 보호된 뷰에 접근하려고 시도할 때 로그인 페이지로 리다이렉트됨.
+- 이 때, login_required 데코레이터에 의해 원래 접근하려고 했던 URL이 next 매개변수로 로그인 URL에 전달되어 **이를 이용해 로그인 후 가려고 했던 페이지로 redirect 시킬 수 있음.**
+```
+# views.py에 import login_required 
+from django.contrib.auth.decorators import login_required
+
+# login.html 작성
+<form method="post">
+    {% csrf_token %}
+    <!-- other input fields -->
+    <input type="hidden" name="next" value="{{ next }}">
+    <input type="submit" value="Login">
+</form>
+
+# views.py 작성 
+def login(request):
+  next_url = request.POST.get('next', '/')
+  return redirect(next_url)
+
+```
