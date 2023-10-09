@@ -139,25 +139,43 @@
 - migrate를 해도 table이 만들어지지 않도록 설계되어 있으며, 대신 다른 모델의 기본 클래스로 사용되는 경우 해당 필드가 하위 클래스의 필드에 추가됨.
 - 파이썬에서 보통 Abstract가 붙어있으면 추상 기본 클래스임
 
-### 11. login_required 데코레이터
+### 11. login_required 데코레이터를 사용한 로그인 후 요청페이지 redirect
 - Django의 login_required 데코레이터를 사용하면, 로그인되지 않은 사용자가 보호된 뷰에 접근하려고 시도할 때 로그인 페이지로 리다이렉트됨.
 - 이 때, login_required 데코레이터에 의해 원래 접근하려고 했던 URL이 next 매개변수로 로그인 URL에 전달되어 **이를 이용해 로그인 후 가려고 했던 페이지로 redirect 시킬 수 있음.**
-  
+**- 주의사항 : 'next'변수가 선언되고 전달되는 순서를 잘 이해하기(아래 코드 참고)**  
+  ※ 처음 로그인 페이지로 넘어갈 때 전달되는 next는 Get 메서드임, 해당 next 매개변수를 다시 login html에 넘겨주고 다시 POST방식으로 views.py로 받아오는 순서임.
+
 ```
-# views.py에 import login_required 
+# views.py에 import login_required 하기
 from django.contrib.auth.decorators import login_required
+
+
+# views.py 작성
+def login(request):
+    if request.method == "POST":
+        form = AuthenticationForm(request, request.POST)
+        next_url = request.POST.get('next', '/')   #2번째 인자 '/'은 'next'라는 키로 값이 존재하지 않을 때 url 엔드포인트가 /로 돼서 루트페이지로 반환하기 위함
+        next = request.POST.get('next','/')    
+        if form.is_valid():
+            auth_login(request,form.get_user())
+            return redirect(next)
+
+    #index.html에서 login이 안되어 있을 때 create를 누르면 GET 메서드로 login 함수로 전달되기 때문에 reqeust.GET.get을 통해 next변수 가져오기
+    #이후 next를 login html에 넘겨서 login form 
+    else:                                         
+        form = AuthenticationForm()
+        next = request.GET.get('next','/')  
+    context ={
+        "form" : form,
+        'next' : next
+    }
+    return render(request,'accounts/login.html',context)
 
 # login.html 작성
 <form method="post">
     {% csrf_token %}
     <!-- other input fields -->
-    <input type="hidden" name="next" value="{{ next }}">
+    <input type="hidden" name="next" value="{{ next }}">   #여기서 {{ next }} 는 def login의 else: 문 context로 넘어온 next임
     <input type="submit" value="Login">
 </form>
-
-# views.py 작성 
-def login(request):
-  next_url = request.POST.get('next', '/') # 여기서 2번째 인자 '/'은 'next'라는 키로 값이 존재하지 않을 때 url 엔드포인트가 /로 돼서 루트페이지로 반환하기 위함
-  return redirect(next_url)
-
 ```
