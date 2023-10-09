@@ -139,12 +139,10 @@
 - migrate를 해도 table이 만들어지지 않도록 설계되어 있으며, 대신 다른 모델의 기본 클래스로 사용되는 경우 해당 필드가 하위 클래스의 필드에 추가됨.
 - 파이썬에서 보통 Abstract가 붙어있으면 추상 기본 클래스임
 
-### 11. login_required 데코레이터를 사용한 로그인 후 요청페이지 redirect
-- Django의 login_required 데코레이터를 사용하면, 로그인되지 않은 사용자가 보호된 뷰에 접근하려고 시도할 때 로그인 페이지로 리다이렉트됨.
-- 이 때, login_required 데코레이터에 의해 원래 접근하려고 했던 URL이 next 매개변수로 로그인 URL에 전달되어 **이를 이용해 로그인 후 가려고 했던 페이지로 redirect 시킬 수 있음.**
-**- 주의사항 : 'next'변수가 선언되고 전달되는 순서를 잘 이해하기(아래 코드 참고)**  
-  ※ 처음 로그인 페이지로 넘어갈 때 전달되는 next는 Get 메서드임, 해당 next 매개변수를 다시 login html에 넘겨주고 다시 POST방식으로 views.py로 받아오는 순서임.
-
+### 11. login_required 데코레이터/request.path를 사용한 로그인 후 요청페이지 redirect
+  (1) Django의 login_required 데코레이터를 사용하면, 로그인되지 않은 사용자가 보호된 뷰에 접근하려고 시도할 때 로그인 페이지로 리다이렉트됨. 이 때, login_required 데코레이터에 의해 원래 접근하려고 했던 URL이 next 매개변수로 로그인 URL에 전달되어 **이를 이용해 로그인 후 가려고 했던 페이지로 redirect 시킬 수 있음.  
+  **- 주의사항 : 'next'변수가 선언되고 전달되는 순서를 잘 이해하기(아래 코드 참고)**  
+  ※ 처음 로그인 페이지로 넘어갈 때 전달되는 next는 Get 메서드임, 해당 next 매개변수를 다시 login html에 넘겨주고 다시 POST방식으로 views.py로 받아오는 순서임.  
 ```
 # views.py에 import login_required 하기
 from django.contrib.auth.decorators import login_required
@@ -179,3 +177,12 @@ def login(request):
     <input type="submit" value="Login">
 </form>
 ```
+  
+  (2) {{ request.path }} : login_required 없이 현재 보고있던 페이지에서 로그인 버튼을 눌렀을 때 현재 url을 저장하는 방법.
+      ※ Django 프로젝트를 시작할 때 기본 settings.py에 이 context processor가 이미 포함되어 있기 때문에, Django의 template context에서는 기본적으로 request 객체에 접근할 수 있음. 따라서 템플릿 내에서 request.path를 직접 사용하면 현재 요청의 URL 경로를 얻을 수 있음.  
+      
+```
+# html에 작성
+<a href="{% url 'accounts:login' %}?next={{ request.path }}"> Login </a> #form을 별도로 않해도 url 형식으로 정보가 넘어감.
+```
+
