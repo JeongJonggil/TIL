@@ -152,8 +152,7 @@ from django.contrib.auth.decorators import login_required
 def login(request):
     if request.method == "POST":
         form = AuthenticationForm(request, request.POST)
-        next_url = request.POST.get('next', '/')   #2번째 인자 '/'은 'next'라는 키로 값이 존재하지 않을 때 url 엔드포인트가 /로 돼서 루트페이지로 반환하기 위함
-        next = request.POST.get('next','/')    
+        next = request.POST.get('next','/')    #2번째 인자 '/'은 'next'라는 키로 값이 존재하지 않을 때 url 엔드포인트가 /로 돼서 루트페이지로 반환하기 위함
         if form.is_valid():
             auth_login(request,form.get_user())
             return redirect(next)
