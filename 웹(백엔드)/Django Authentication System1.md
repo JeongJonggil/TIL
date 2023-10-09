@@ -184,5 +184,21 @@ def login(request):
 ```
 # html에 작성
 <a href="{% url 'accounts:login' %}?next={{ request.path }}"> Login </a> #form을 별도로 않해도 url 형식으로 정보가 넘어감.
-```
 
+# views.py에 작성(위의 require_login데코레이터 next 변수 로직과 동일)
+def login(request):
+    if request.method == "POST":
+        form = AuthenticationForm(request, request.POST)
+        next_url = request.POST.get('next', '/')
+        if form.is_valid():
+            auth_login(request, form.get_user())
+            return redirect(next_url)
+    else:
+        form = AuthenticationForm()
+        next_url = request.GET.get('next', '/')
+    context = {
+        "form": form,
+        "next": next_url
+    }
+    return render(request, 'accounts/login.html', context)
+```
