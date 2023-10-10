@@ -114,8 +114,8 @@
 
 ### 2. 타입 선호도(참고)
 
-[1]~[2] 이미지 업로드
-
+![1](https://github.com/JeongJonggil/TIL/assets/139416006/0f5ab2d9-8751-4efd-ad71-eb3bbb026c7d)
+![2](https://github.com/JeongJonggil/TIL/assets/139416006/6b3a157d-7aaa-43cb-a11a-57494a66053e)
 
 
 ### 3. DML(Data Manipulation Language)
