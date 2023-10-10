@@ -112,7 +112,10 @@
 ![9](https://github.com/JeongJonggil/TIL/assets/139416006/891b336f-2707-4127-90da-59e68e894ba8)
   
 - 위 이미지에는 없는데 from django.contrib.auth.forms import AuthenticationForm 후 써야됨
-- AuthenticationForm() : 로그인 인증에 사용할 데이터를 입력받는 built-in form
+- AuthenticationForm()
+  - 로그인 인증에 사용할 데이터를 입력받는 built-in form,
+  -**내부적으로 authenticate 함수(DB의 user정보와 입력받은 user정보를 비교하는 함수)를 사용하여 사용자의 자격 증명을 확인. 따라서 form.is_valid()를 호출할 때, AuthenticationForm은 제공된 username과 password를 사용하여 사용자를 인증하게 됨.**
+  - **※주의※ : login(request, user) 함수는 그냥 2번 째 인자로 받은 user의 세션을 만드는(로그인) 역할임. 유효성 검사는 authenticate 함수를 명시적으로 사용하거나, AuthenticationForm의 내부 authenticate 함수에 의해 실행됨**
 - get-user() : AuthenticationForm의 인스턴스 메서드
       → 유효성 검사를 통과했을 경우 로그인 한 사용자 객체를 반환
 
