@@ -28,6 +28,10 @@
 ### 2. 회원 탈퇴
 
 - User 객체를 Delete 하는 과정
+- 회원 탈퇴 시 로그아웃을 진행하려면
+  - request.user.delete() 이후 auth_logout(request) 순으로 진행해야 됨
+  - `auth_logout`을 먼저 호출하면 `request.user`가 `AnonymousUser`로 바뀌게 되므로, 이후에 `request.user.delete()`를 호출하면 에러가 발생 함. 따라서 사용자 데이터를 삭제하기 전에 로그아웃을 수행하면 안 되고, 반드시 사용자 데이터를 먼저 삭제한 후 로그아웃을 수행해야 함.
+
 
 ![8](https://github.com/JeongJonggil/TIL/assets/139416006/ffd8c6af-8416-47c8-90cc-0ff018b7acd0)
 
