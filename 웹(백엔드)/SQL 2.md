@@ -202,7 +202,8 @@
 
 **(1) INNER JOIN**
 
-<span style = "color : red ">[252] img </span>
+![1](https://github.com/JeongJonggil/TIL/assets/139416006/03fb31e5-60ad-4bcf-a422-ff85ee2f016a)
+
 
 ```sqlite
 #INNER JOIN syntax
@@ -267,7 +268,8 @@ INNER JOIN table_b
 
 **(2) LEFT JOIN**
 
-<span style = "color : red ">[260] img </span>
+![2](https://github.com/JeongJonggil/TIL/assets/139416006/37b776e9-fc77-4870-8fbc-11addbbf68d7)
+
 
 - 왼쪽은 테이블의 모든 레코드를 표기
 - 오른쪽 테이블과 매칭되는 레코드가 없으면 NULL을 표시
