@@ -184,3 +184,119 @@
       WHERE createdAT IN (SELECT createdAT FROM articles ORDER BY createdAT
       LIMIT 2);
   ```
+
+### 
+
+### 4. 관계
+
+- 관계 : 여러 테이블 간의 (논리적) 연결
+  - 관계의 필요성 : 중복되는 검색어를 조회하는 경우나, 중복되는 특정 데이터가 수정 될 때 곤란해짐
+  - 테이블을 나누어 외래키를 연결하여 관리하고자 함이 관계의 필요성임
+- **JOIN이 필요한 순간**
+  - 테이블을 분리하면 데이터 관리는 용이해질 수 있으나 출력시에는 문제가 있음
+  - 테이블 한 개 만을 출력할 수 밖에 없어 다른 테이블과 결합하여 출력하는 것이 필요해짐
+
+### 5. JOIN
+
+- 둘 이상의 테이블에서 데이터를 검색하는 방법
+
+**(1) INNER JOIN**
+
+<span style = "color : red ">[252] img </span>
+
+```sqlite
+#INNER JOIN syntax
+SELECT
+	select_list
+FROM
+	table_a
+INNER JOIN table_b
+	ON table_b.fk = table_a.pk;
+	
+# 1. FROM절 이후 메인 테이블 지정(table_a)
+# 2. INNER JOIN 절 이후 메인 테이블과 조인할 테이블을 지정(table_b)
+# 3. ON 키워드 이후 조인 조건을 작성
+# 4. 조인 조건은 table_a와 table_b간의 레코드를 일치시키는 규칙을 지정
+```
+
+- 메인 테이블(FROM table)에 조인할 테이블(INNER JOIN table)의 데이터가 붙는 방식으로 테이블이 형성됨
+
+- 예시코드
+
+```sqlite
+-- users, articles 2가지 table 생성
+    CREATE TABLE users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name VARCHAR(50) NOT NULL
+    );
+
+    CREATE TABLE articles(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        title VARCHAR(10) NOT NULL,
+        content VARCHAR(50) NOT NULL,
+        userID INTEGER NOT NULL,
+        FOREIGN KEY(userID) REFERENCES users
+    );
+
+    INSERT INTO users(name)
+    VALUES
+    ('하석주'),
+    ('송윤미'),
+    ('유하선');
+
+    INSERT INTO articles(title,content,userID)
+    VALUES
+    ('게시글1','내용1',1),
+    ('게시글2','내용2',2),
+    ('게시글3','내용3',1),
+    ('게시글4','내용4',4),
+    ('게시글5','내용5',1);
+
+-- INNER JOIN syntax
+    -- userID가 1인 게시글의 제목과 작성자 가져오기
+    SELECT articles.title,users.name 
+    FROM articles
+    INNER JOIN users
+        ON articles.userID = users.id
+    where
+        userID = 1;
+
+
+
+```
+
+**(2) LEFT JOIN**
+
+<span style = "color : red ">[260] img </span>
+
+- 왼쪽은 테이블의 모든 레코드를 표기
+- 오른쪽 테이블과 매칭되는 레코드가 없으면 NULL을 표시
+
+```sqlite
+#LEFT JOIN syntax
+SELECT
+	select_list
+FROM
+	table_a
+LEFT JOIN table_b
+	ON table_b.fk = table_a.pk;
+	
+# 1. FROM절 이후 왼쪽 테이블 지정(table_a)
+# 2. LEFT JOIN 절 이후 오른쪽 테이블을 지정(table_b)
+# 3. ON 키워드 이후 조인 조건을 작성
+# 4. 왼쪽 테이블의 각 레코드를 오른쪽 테이블의 모든 레코드와 일치시킴
+```
+
+- 예시코드
+
+```sqlite
+-- LEFT JOIN syntax
+    --게시글을 작성한 이력이 없는 회원 정보 조회
+    SELECT *
+    FROM users
+    LEFT JOIN articles
+        ON articles.userID = users.id
+    where
+        articles.userID IS NULL;
+```
+
