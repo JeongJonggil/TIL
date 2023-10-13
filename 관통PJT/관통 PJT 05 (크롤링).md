@@ -2,17 +2,19 @@
 
 ### 1. 파이썬으로 웹 페이지에 있는 정보를 가져오는 방법
 
-##### <span style= "color:red">[1] img </span>
+![1](https://github.com/JeongJonggil/TIL/assets/139416006/418453af-f7e8-4a65-8846-e8377902a657)
+
 
 ### 2. 웹 크롤링 이해하기
 
 ​	(1) 데이터 사이언스 프로세스
 
-​		<span style= "color:red">[2] img </span>
+![2](https://github.com/JeongJonggil/TIL/assets/139416006/09c41b8f-d1d8-4aa2-989a-32179f196c57)
 
 ​	(2) 데이터 수집
 
-​	<span style= "color:red">[3] img </span>
+![3](https://github.com/JeongJonggil/TIL/assets/139416006/4c96da60-081a-41f5-8241-63da771e82c2)
+
 
 ### 3. 웹 크롤링
 
@@ -24,12 +26,11 @@
 
 ### 4. 웹 크롤링 프로세스
 
-​		<span style= "color:red">[4] img </span>
+![4](https://github.com/JeongJonggil/TIL/assets/139416006/ccd6bffe-585b-452e-9ff2-781156266cc3)
 
-​		<span style= "color:red">[5] img </span>
+![5](https://github.com/JeongJonggil/TIL/assets/139416006/cd91fdf2-f353-4d44-acfb-aac04b7ec58f)
 
-​		<span style= "color:red">[6] img </span>
-
+![6](https://github.com/JeongJonggil/TIL/assets/139416006/12076791-3ade-4796-9fa7-8c12a79dc338)
 
 
 - 크롤링 예시 코드 1 (BeautifulSoap 사용 실습)
