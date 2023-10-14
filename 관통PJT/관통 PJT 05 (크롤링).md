@@ -1,4 +1,4 @@
-# 관통 PJT 05 (크롤링)
+# 관통 PJT 05 (크롤링, requests 와 selenium 차이)
 
 ### 1. 파이썬으로 웹 페이지에 있는 정보를 가져오는 방법
 
@@ -130,7 +130,7 @@ def get_google_data(keyword):
     driver = webdriver.Chrome()
     driver.get(url)
 
-    # 열린 페이지 소스를 받아옴
+    # driver모듈로 열린 페이지 소스를 받아오고 BeautifulSoup를 통해 데이터를 파싱.
     html = driver.page_source
     soup = BeautifulSoup(html, "html.parser")
 
@@ -145,5 +145,27 @@ def get_google_data(keyword):
             print(f'제목 = {title.text}')
 
 get_google_data('파이썬')
+```
+
+<hr>
+
+### 참고
+
+### 1. requests vs selenium 
+
+​	(1) requests : 정적페이지를 크롤링 할 때 사용
+
+```python
+import requests 
+requests.get(url)
+```
+
+​	(2) driver 모듈(=selenium) : 동적페이지를 크롤링 할 때 사용. 동적페이지에서 특정 동작 후의 html 소스코드를 크롤링하기 위해 브라우저를 직접 열어서 해당 동작을 실행하는 과정이 필요
+
+```python
+from selenium import webdriver
+# 그냥 우리가 크롬 브라우저를 열고 주소창에 url을 입력하는 과정을 동일하게 그냥 코드로 작성했다고 보면 됨
+driver = webdriver.Chrome() # 크롬 브라우저가 열린다. 이 때, 동적인 내용들이 모두 채워짐
+driver.get(url)				# 열린 브라우저를 해당 url로 이동시킴
 ```
 
