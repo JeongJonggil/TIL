@@ -63,6 +63,11 @@
 
 - 인증된 사용자의 Session 데이터를 Update 하는 과정
 - PasswordChangeForm() : 비밀번호 변경 시 사용자 입력 데이터를 받을 built-in Form
+- **참고** :  
+  (1) 회원정보 수정 form 안에 비밀번호 변경 a태그가 자동으로 생성 되는데 자꾸 url이 accounts/<user_id>/password/로 설정됨  
+  (2) 문제점 : 회원정보수정 url을 <int:pk>/update/ 로 해놨었는데 이때 <int:pk>를 지우니까 /<user_id>/password/로 설정됨  
+  (3) 원인 : 추정 불가    
+  (4) 지피티 답변 : django 내부적으로 동적 url을 형성할 때, 정의된 URL 패턴들 중에서 가장 "가까운" 패턴을 찾아서 사용함. 이 때 "가까운" 패턴이란, 현재 처리 중인 뷰와 가장 유사한 패턴을 의미. 결국 회원정보수정 url의 <int:pk>와 비밀번호 변경 <user_id>가 동적 url 생성과정에서 문제를 일으켰을 가능성이 있음  
 
 ![14](https://github.com/JeongJonggil/TIL/assets/139416006/9f153ee3-4530-4f44-99a4-4b4ea538f6df)
 
