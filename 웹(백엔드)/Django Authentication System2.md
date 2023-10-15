@@ -32,12 +32,24 @@
 - 회원 탈퇴 시 로그아웃을 진행하려면
   - request.user.delete() 이후 auth_logout(request) 순으로 진행해야 됨
   - `auth_logout`을 먼저 호출하면 `request.user`가 `AnonymousUser`로 바뀌게 되므로, 이후에 `request.user.delete()`를 호출하면 에러가 발생 함. 따라서 사용자 데이터를 삭제하기 전에 로그아웃을 수행하면 안 되고, 반드시 사용자 데이터를 먼저 삭제한 후 로그아웃을 수행해야 함.
+<<<<<<< HEAD
   
 - 참고 : request.user.delete()만 해도 로그아웃이 되긴 함.
   
    request.user.delete()만 하면 현재 세션에 연결된 사용자 정보가 데이터베이스에 없기 때문에 세션이 무효화되어request.user는 계속해서 AnonymousUser를 반환하고 사용자는 로그아웃된 것처럼 보이게 됨. 하지만, 명시적으로 logout(request)를 호출하여 세션 데이터를 명확하게 삭제해주는 것이 세션 데이터와 관련된 모든 정보가 명확하게 삭제되고, 서버 리소스도 절약하게 됨
 
 
+=======
+    ```
+    #회원탈퇴와 동시에 로그아웃 로직
+    @require_POST
+    def delete(request):
+    if request.method == "POST":
+        request.user.delete()
+        auth_logout(request)
+        return redirect("articles:index")
+     ```
+>>>>>>> eb35108c113148988d126b7df377126bd4056181
 ![8](https://github.com/JeongJonggil/TIL/assets/139416006/ffd8c6af-8416-47c8-90cc-0ff018b7acd0)
 
 ### 3. 회원정보 수정
@@ -61,6 +73,11 @@
 
 - 인증된 사용자의 Session 데이터를 Update 하는 과정
 - PasswordChangeForm() : 비밀번호 변경 시 사용자 입력 데이터를 받을 built-in Form
+- **참고** :  
+  (1) 회원정보 수정 form 안에 비밀번호 변경 a태그가 자동으로 생성 되는데 자꾸 url이 accounts/<user_id>/password/로 설정됨  
+  (2) 문제점 : 회원정보수정 url을 <int:pk>/update/ 로 해놨었는데 이때 <int:pk>를 지우니까 /<user_id>/password/로 설정됨  
+  (3) 원인 : 추정 불가    
+  (4) 지피티 답변 : django 내부적으로 동적 url을 형성할 때, 정의된 URL 패턴들 중에서 가장 "가까운" 패턴을 찾아서 사용함. 이 때 "가까운" 패턴이란, 현재 처리 중인 뷰와 가장 유사한 패턴을 의미. 결국 회원정보수정 url의 <int:pk>와 비밀번호 변경 <user_id>가 동적 url 생성과정에서 문제를 일으켰을 가능성이 있음  
 
 ![14](https://github.com/JeongJonggil/TIL/assets/139416006/9f153ee3-4530-4f44-99a4-4b4ea538f6df)
 
