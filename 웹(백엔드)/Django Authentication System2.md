@@ -31,8 +31,15 @@
 - 회원 탈퇴 시 로그아웃을 진행하려면
   - request.user.delete() 이후 auth_logout(request) 순으로 진행해야 됨
   - `auth_logout`을 먼저 호출하면 `request.user`가 `AnonymousUser`로 바뀌게 되므로, 이후에 `request.user.delete()`를 호출하면 에러가 발생 함. 따라서 사용자 데이터를 삭제하기 전에 로그아웃을 수행하면 안 되고, 반드시 사용자 데이터를 먼저 삭제한 후 로그아웃을 수행해야 함.
-
-
+    ```
+    #회원탈퇴와 동시에 로그아웃 로직
+    @require_POST
+    def delete(request):
+    if request.method == "POST":
+        request.user.delete()
+        auth_logout(request)
+        return redirect("articles:index")
+     ```
 ![8](https://github.com/JeongJonggil/TIL/assets/139416006/ffd8c6af-8416-47c8-90cc-0ff018b7acd0)
 
 ### 3. 회원정보 수정
