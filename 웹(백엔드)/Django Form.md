@@ -134,7 +134,7 @@ class CommentForm(forms.ModelForm):
         exclude = ['question']
 ```
   
-**(2) ChoiceField : 데이터베이스의 모델로부터 선택 항목을 생성하려면 ModelChoiceField를 사용. ChoiceField의 서브클래스로, 모델의 쿼리셋을 바탕으로 선택 항목을 자동으로 생성.**  
+**(2) ModelChoiceField : 데이터베이스의 모델로부터 선택 항목을 생성하려면 ModelChoiceField를 사용. ChoiceField의 서브클래스로, 모델의 쿼리셋을 바탕으로 선택 항목을 자동으로 생성.**  
 ```
 # 예시코드
 from django import forms
