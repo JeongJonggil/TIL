@@ -138,12 +138,13 @@ class CommentForm(forms.ModelForm):
 ```
 # 예시코드
 from django import forms
-from django.conf import settings
-from .models import Store
+from django.contrib.auth import get_user_model
+from .models import Store,Product
+
+UserModel = get_user_model()
 
 class StoreForm(forms.ModelForm):
-    user = forms.ModelChoiceField(queryset=settings.AUTH_USER_MODEL.objects.filter(is_superuser=True))
-    
+    user = forms.ModelChoiceField(queryset=UserModel.objects.filter(is_superuser=True))
     class Meta:
         model = Store
         fields = '__all__'
