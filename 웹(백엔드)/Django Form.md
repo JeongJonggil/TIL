@@ -115,3 +115,36 @@ class ArticleForm(forms.ModelForm):
 
 ![6](https://github.com/JeongJonggil/TIL/assets/139416006/a5959004-7d1f-4362-b9a6-902105121ec6)
 
+### 6. Choice/ModelChoiceField  
+- Form에 input 입력받을 시 셀렉트박스 등 사용자가 데이터 목록중에서 선택하여 입력가능하게 하는 필드
+  
+    
+**(1) ChoiceField : ChoiceField는 choices 인자를 통해 선택 항목을 받아들임. choices 인자는 리스트나 튜플 사용. choices의 첫 번째 값은 데이터베이스에 저장될 실제 값이고, 두 번째 값은 사용자에게 표시될 레이블. choices인자를 다른 함수 리턴값으로 하여 동적으로도 선택항목을 조정가능함**  
+```
+# 예시코드
+class CommentForm(forms.ModelForm):
+    PICK_CHOICES = (
+        (True, 'RED TEAM'),
+        (False, 'BLUE TEAM'),
+    )
+    pick = forms.ChoiceField(choices=PICK_CHOICES, widget=forms.Select)
+    
+    class Meta:
+        model = Comment
+        exclude = ['question']
+```
+  
+**(2) ChoiceField : 데이터베이스의 모델로부터 선택 항목을 생성하려면 ModelChoiceField를 사용. ChoiceField의 서브클래스로, 모델의 쿼리셋을 바탕으로 선택 항목을 자동으로 생성.**  
+```
+# 예시코드
+from django import forms
+from django.conf import settings
+from .models import Store
+
+class StoreForm(forms.ModelForm):
+    user = forms.ModelChoiceField(queryset=settings.AUTH_USER_MODEL.objects.filter(is_superuser=True))
+    
+    class Meta:
+        model = Store
+        fields = '__all__'
+```
