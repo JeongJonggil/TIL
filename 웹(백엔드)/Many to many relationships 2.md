@@ -45,7 +45,8 @@
 - 데이터베이스 구조에 맞추어 작성 되어 있음
 - 초기데이터 제공에 사용됨
 
-@@@@@@@@@@@@@@@@@@@@[1]@@@@@@@@@@@@@@@
+![1](https://github.com/JeongJonggil/TIL/assets/139416006/16321bcc-e6b8-49a4-9bfa-f939615c3dc1)
+
 
 - fixtures 관련 명령어
 
@@ -102,7 +103,7 @@
 
   - **loaddata 순서 주의사항 : loaddat를 한방에 할 때는 장고가 알아서 순서 맞춰줘서 상관 없음**
 
-@@@@@@@@@@@@@@@@@@@@[2]@@@@@@@@@@@@@@@
+![2](https://github.com/JeongJonggil/TIL/assets/139416006/fde0a9e1-ffa0-4f55-b757-dd4335daea67)
 
 ### 4. Improve query(쿼리 개선)
 
@@ -111,23 +112,31 @@
   (1) annotate 사용
 
   - SQL의 GROUP BY 쿼리를 사용
-  - @@@@@@@@@@@@@@@@@@@@[3]~[6]@@@@@@@@@@@@@@@
+![3](https://github.com/JeongJonggil/TIL/assets/139416006/c5a86576-da56-453d-b060-8f4ad1d860c0)
+![4](https://github.com/JeongJonggil/TIL/assets/139416006/bf056ed2-af46-435c-9350-d1273354ebae)
+![5](https://github.com/JeongJonggil/TIL/assets/139416006/6b465a65-8f00-4875-8eea-31fe51f50aaa)
+![6](https://github.com/JeongJonggil/TIL/assets/139416006/ac0e0239-c81a-4141-9363-8bc3ca901a35)
 
-  
 
   (2) select_related
 
   - SQL의 INNER JOIN 쿼리를 활용
   - 1:1 또는 N:1참조 관계에서 사용
-  - @@@@@@@@@@@@@@@@@@@@[7]~[10]@@@@@@@@@@@@@@@
+![7](https://github.com/JeongJonggil/TIL/assets/139416006/e27c4e04-e33d-492d-9783-8523fe75e408)
+![8](https://github.com/JeongJonggil/TIL/assets/139416006/85a43de8-cc4b-43c2-bfdb-e5019ba7ed08)
+![9](https://github.com/JeongJonggil/TIL/assets/139416006/d35f41ee-3114-4f6d-8829-a6e8d41d6e7d)
+![10](https://github.com/JeongJonggil/TIL/assets/139416006/92de0f01-bac3-469f-9258-0100d809c955)
 
-  
 
   (3) prefetch_related
 
   - M:N 또는 N:1 역참조 관계에서 사용
   - SQL이 아닌 Python을 사용한 JOIN을 진행
-  - @@@@@@@@@@@@@@@@@@@@[11]~[14]@@@@@@@@@@@@@@@
+![11](https://github.com/JeongJonggil/TIL/assets/139416006/0d55a646-bf3a-4b2b-9c58-dd0a3313cd76)
+![12](https://github.com/JeongJonggil/TIL/assets/139416006/c32968c2-33a2-41f4-8e4d-fad1b9e1fe1f)
+![13](https://github.com/JeongJonggil/TIL/assets/139416006/99927024-3240-4b3b-90ce-3668c7a40e00)
+![14](https://github.com/JeongJonggil/TIL/assets/139416006/b69f942a-c701-45ff-aea4-f20a4b5ab004)
+
 
   ​	
 
