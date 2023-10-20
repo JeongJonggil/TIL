@@ -88,7 +88,10 @@
 - 하지만 서버가 응답할 수 있는 것은 페이지 뿌난 아니라 다양한 데이터 타입을 응답할 수 있음
 - REST API는 이 중에서도 **JSON** 타입으로 응답하는 것을 권장
 
-@@@@@@@@@@@@@@@@@@@[1]~[4]@@@@@@@@@@@@@@@@@@@@@@
+![1](https://github.com/JeongJonggil/TIL/assets/139416006/2b547134-4ac0-4bfb-8010-5066ead47101)
+![2](https://github.com/JeongJonggil/TIL/assets/139416006/9147e4e9-5a88-45f6-9139-ed678c59421f)
+![3](https://github.com/JeongJonggil/TIL/assets/139416006/6faf2541-37fb-4ed2-961c-3b775a8cd27f)
+![4](https://github.com/JeongJonggil/TIL/assets/139416006/c916ca89-99f8-4a79-b4bd-4b81a1e19f55)
 
 
 
@@ -102,19 +105,19 @@
 
 - 여러 시스템에서 활요하기 위해 데이터 구조나 객체 상태를 나중에 재구성할 수 있는 포맷으로 변환하는 과정
 
-@@@@@@@@@@@@@@@@@@@[5]@@@@@@@@@@@@@@@@@@@@@@
-
-
+![5](https://github.com/JeongJonggil/TIL/assets/139416006/818a1c2b-5266-43a0-85ec-6aa4ded7f55b)
 
 ### 7. DRF with Single Model
 
 - POSTMAN 설치
 
-@@@@@@@@@@@@@@@@@@@[6]~[8]@@@@@@@@@@@@@@@@@@@@@@
+![6](https://github.com/JeongJonggil/TIL/assets/139416006/4390da4e-a048-4104-bb5c-0f4e2d9d3865)
+![7](https://github.com/JeongJonggil/TIL/assets/139416006/85cb3ac3-623c-4213-a1f2-058388480249)
+![8](https://github.com/JeongJonggil/TIL/assets/139416006/09fae8c3-df80-4376-8fa6-87847a883066)
 
 - URL및 HTTP requests methods 설계
 
-@@@@@@@@@@@@@@@@@@@[9]@@@@@@@@@@@@@@@@@@@@@@
+![9](https://github.com/JeongJonggil/TIL/assets/139416006/21cb233f-75fa-427f-b66f-d14c34bdec0d)
 
 - 'api_view' decorator
 
@@ -136,27 +139,32 @@
     	serializer = ArticleListSerializer(articles, many=True)	#첫번째 인자가 복수 쿼리셋이면 many=True 적어줘야됨, 단수이면 안적어도 됨
     	return Response(serializer.data)
     ```
+  
+![10](https://github.com/JeongJonggil/TIL/assets/139416006/90b20beb-0ca2-4ebc-bf22-6524943de39a)
+![11](https://github.com/JeongJonggil/TIL/assets/139416006/d17909f1-e0f7-4256-9aa9-55bf47c25bb8)
+![12](https://github.com/JeongJonggil/TIL/assets/139416006/7137cdc0-f4a8-48e9-bbb2-f511d3c017c4)
+![13](https://github.com/JeongJonggil/TIL/assets/139416006/fc908e72-5a14-43db-8599-7af62d2d367f)
 
-@@@@@@@@@@@@@@@@@@@[10]~[13]@@@@@@@@@@@@@@@@@@@
 
 - POST
   - 하기예시 url은 path('article/',views.article_list)
 
-@@@@@@@@@@@@@@@@@@@[14]~[15]@@@@@@@@@@@@@@@@@@@
+![14](https://github.com/JeongJonggil/TIL/assets/139416006/f5807569-5b70-4aab-81e5-f1bea1dd5027)
+![15](https://github.com/JeongJonggil/TIL/assets/139416006/aa5bfd50-369f-4cab-90aa-c47d94d6ae86)
+
 
 - DELETE
   - 위의 GET URL과 동일한 url 사용(article_pk를 사용하기 때문에)
+ 
+![16](https://github.com/JeongJonggil/TIL/assets/139416006/2e823a17-adee-4602-95da-a653a6c5c8aa)
 
-@@@@@@@@@@@@@@@@@@@[16]@@@@@@@@@@@@@@@@@@@
 
 - PUT
   - 위의 GET URL과 동일한 url 사용(article_pk를 사용하기 때문에)
   - 수정의 성공은 일반적으로 응답코드 200을 사용하기 때문에 Response 인자로 안넣어 주어도 괜찮음
 
-@@@@@@@@@@@@@@@@@@@[17]@@@@@@@@@@@@@@@@@@@
-
-
+![17](https://github.com/JeongJonggil/TIL/assets/139416006/2fd418ad-9ae8-419d-9eae-dd57e35d5a80)
 
 ### 8. raise_exception (참고)
 
-@@@@@@@@@@@@@@@@@@@[18]@@@@@@@@@@@@@@@@@@@
+![18](https://github.com/JeongJonggil/TIL/assets/139416006/bd90c4d8-c394-4681-82b0-e9d883f28de5)
