@@ -19,7 +19,8 @@
 - REST API
   - REST라는 설계 디자인 약속을 지켜 구현한 API
 
-@@@@@@@@@@[1]img@@@@@@@@@@@@@@@@
+![1](https://github.com/JeongJonggil/TIL/assets/139416006/8d668953-f1ee-41c4-b530-ac565566bcc5)
+
 
 
 
@@ -36,7 +37,8 @@
 
   - 네트워크 상에 리소스가 어디 있는지를 알려주기 위한 약속
 
-  - @@@@@@@@@@[2]img@@@@@@@@@@@@@@@@
+![2](https://github.com/JeongJonggil/TIL/assets/139416006/15ca4a78-1a98-43b1-a41b-158a22a7dd07)
+
 
   - > 1. Schema (or Protocol)
     >    - 브라우저가 리소스를 요청하는데 사용해야 하는 규약
