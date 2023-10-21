@@ -95,7 +95,7 @@
 
 
 
-### 5. DFR (Django REST Framework)
+### 5. DRF(Django REST Framework)
 
 - Django에서 Restful API 서버를 쉽게 구축할 수 있도록 도와주는 오픈소스 라이브러리
 
@@ -140,6 +140,7 @@
     	return Response(serializer.data)
     ```
   
+
 ![10](https://github.com/JeongJonggil/TIL/assets/139416006/90b20beb-0ca2-4ebc-bf22-6524943de39a)
 ![11](https://github.com/JeongJonggil/TIL/assets/139416006/d17909f1-e0f7-4256-9aa9-55bf47c25bb8)
 ![12](https://github.com/JeongJonggil/TIL/assets/139416006/7137cdc0-f4a8-48e9-bbb2-f511d3c017c4)
@@ -155,12 +156,13 @@
 
 - DELETE
   - 위의 GET URL과 동일한 url 사용(article_pk를 사용하기 때문에)
- 
+
 ![16](https://github.com/JeongJonggil/TIL/assets/139416006/2e823a17-adee-4602-95da-a653a6c5c8aa)
 
 
 - PUT
   - 위의 GET URL과 동일한 url 사용(article_pk를 사용하기 때문에)
+  - serializer.is_valid()의 경우 #serializer.py에서 정의한 Serializer field 속성에 적혀있는 필드에 대해 validation을 검사하게 됨. 그래서 **data의 일부만 수정하려면** fields 속성을 조절하거나, **views.py에서 serializer 클래스를 사용할 떄 partial = True를 인자로 넣어주어야 함**(partial은 디폴트값이 False로 되어 있음)
   - 수정의 성공은 일반적으로 응답코드 200을 사용하기 때문에 Response 인자로 안넣어 주어도 괜찮음
 
 ![17](https://github.com/JeongJonggil/TIL/assets/139416006/2fd418ad-9ae8-419d-9eae-dd57e35d5a80)
