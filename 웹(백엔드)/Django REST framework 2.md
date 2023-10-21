@@ -4,16 +4,25 @@
 
 - URL및 HTTP requests methods 설계
 
-@@@@@@@@@@@@[1]@@@@@@@@@@@@@@@
+![1](https://github.com/JeongJonggil/TIL/assets/139416006/288254a1-d287-4897-ac58-e9edbbf63631)
 
 - GET
-  - @@@@@@@@@@[2]~[5]@@@@@@@@@@@@@@
+  
+![2](https://github.com/JeongJonggil/TIL/assets/139416006/3752639a-4ed5-430e-8cc3-1bbaec6fcde6)
+![3](https://github.com/JeongJonggil/TIL/assets/139416006/f55f1481-54aa-4d55-adce-43f6a4685df1)
+![4](https://github.com/JeongJonggil/TIL/assets/139416006/4ba324fa-cd04-4008-b875-d5d5a29d4b06)
+![5](https://github.com/JeongJonggil/TIL/assets/139416006/0a1c1cca-76db-436f-8cf1-54027908fa78)
 
 - POST
-  - @@@@@@@@@@[6]~[9]@@@@@@@@@@@@@@
+
+![6](https://github.com/JeongJonggil/TIL/assets/139416006/d1e362c2-5752-4ff7-a85e-c42777dabd61)
+![7](https://github.com/JeongJonggil/TIL/assets/139416006/1fac124b-5cfa-4fa4-beab-22f086f816be)
+![8](https://github.com/JeongJonggil/TIL/assets/139416006/60ff409d-ec14-4f98-af74-c77c12835284)
+![9](https://github.com/JeongJonggil/TIL/assets/139416006/0c76a929-db2a-400c-9879-80966b8e76ed)
 
 - DELETE & PUT
-  - @@@@@@@@@@[10]@@@@@@@@@@@@@@
+
+![10](https://github.com/JeongJonggil/TIL/assets/139416006/e3e85360-1cb1-47b9-8bec-b4867ceab0db)
 
 ### 2. 응답 데이터 재구성
 
@@ -32,7 +41,8 @@
   > 3. **Field-level Serialization**: DRF는 각 필드 값을 해당 필드의 serializer를 사용하여 serialize합니다. `article` 필드의 경우, DRF는 `ArticleTitleSerializer`를 사용하여 `comment.article` 값을 serialize합니다.
   > 4. **Passing Data to Nested Serializer**: `ArticleTitleSerializer`가 `article` 값을 serialize할 때, DRF는 `comment.article` 값을 해당 serializer의 인스턴스에 전달합니다. 이때 별도의 매개변수 전달은 필요 없습니다. DRF가 내부적으로 필드 값을 해당 serializer에 전달하는 메커니즘을 가지고 있기 때문입니다.
 
-  - @@@@@@@@@@[11]~[12]@@@@@@@@@@@@@@
+![11](https://github.com/JeongJonggil/TIL/assets/139416006/b372d3aa-1cdd-47f7-89e5-99ca6c2cb5c3)
+![12](https://github.com/JeongJonggil/TIL/assets/139416006/1f283f6c-ec16-4293-8ae2-4fea4cb63044)
 
 ### 3. 역참조 데이터 구성
 
@@ -43,7 +53,11 @@
   - comment_count의 명칭은 아무렇게 적어도 됨 → 신규 필드를 생성하는 거기 때문
   - source='comment_set.count'에서 'comment_set.count'는 article.comment_set.count()인데 Meta model 에 Article이 되어 있어서 article은 내부적으로 자동으로 인식해서 생략하고 DRF 문법에 맞게 comment_set.count이 되는 로직임 -> **여기 적은 내용 재검토 필요**
 
-@@@@@@@@@@[13]~[17]@@@@@@@@@@@@@@
+![13](https://github.com/JeongJonggil/TIL/assets/139416006/56516185-1124-4c9f-9ebb-3e2862d1a0ee)
+![14](https://github.com/JeongJonggil/TIL/assets/139416006/6cb1bd26-43ab-4697-a3b9-7faa86e886a5)
+![15](https://github.com/JeongJonggil/TIL/assets/139416006/817be9ba-87e0-4539-b24b-65726d7fbc46)
+![16](https://github.com/JeongJonggil/TIL/assets/139416006/ec233353-4ec8-4a59-8a07-8bb07506b797)
+![17](https://github.com/JeongJonggil/TIL/assets/139416006/3f344680-0ee5-4b0e-88a3-aef71f9b786a)
 
 
 
@@ -58,13 +72,15 @@
 
 - API 문서화
 
-@@@@@@@@@@[18]~[22]@@@@@@@@@@@@@@
+![18](https://github.com/JeongJonggil/TIL/assets/139416006/f1f10645-3b3d-4dbe-b384-36de43fe3f89)
+![19](https://github.com/JeongJonggil/TIL/assets/139416006/75b01beb-470d-4874-95eb-b03b76e75e7a)
+![20](https://github.com/JeongJonggil/TIL/assets/139416006/04251623-60e4-4e8d-9da7-d79dfaf325dc)
+![21](https://github.com/JeongJonggil/TIL/assets/139416006/916ff597-f5b9-4dca-9b5e-5fb07c8fc84a)
+![22](https://github.com/JeongJonggil/TIL/assets/139416006/87b664a2-0ec0-4698-b7d6-d9403eb98934)
 
 - OAS의 핵심 이점 
 
-@@@@@@@@@@[23]@@@@@@@@@@@@@@
-
-
+![23](https://github.com/JeongJonggil/TIL/assets/139416006/92d58557-cb18-424f-b64e-eb76ec5391b4)
 
 ### 5. Django shortcuts functions
 
