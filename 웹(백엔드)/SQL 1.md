@@ -76,7 +76,7 @@
 | :-----------------------------------: | :------------------------------------: | ------------------------------ |
 |  DDL<br />(Data Definition Language)  |    데이터의 기본 구조 및 형식 변경     | CREATE<br />DROP<br />ALTER    |
 |    DQL<br />(Data Query Language)     |              데이터 검색               | SELECT                         |
-| DML<br />(Data Manipulation Language) |  데이토 조작<br />(추가, 수정, 삭제)   | INSERT<br />UPDATE<br />DELETE |
+| DML<br />(Data Manipulation Language) |  데이터 조작<br />(추가, 수정, 삭제)   | INSERT<br />UPDATE<br />DELETE |
 |   DCL<br />(Data Control Language)    | 데이터 및 작업에 대한 사용자 권한 제어 | COMMIT                         |
 
 
@@ -265,16 +265,7 @@
 				WHERE
 					City != 'Prague';
 	
-			--# customers에서 Company 필드 값이 NULL이고 Country 필드 값이 'USA'인 데이터의 LastName,FirstName,Company,Country 조회
-			--# NULL의 경우 데이터 타입을 나타내기 때문에 '=' 말고 IS를 사용해서 비교함	
-				SELECT 
-					LastName, FirstName, Company, Country
-				FROM
-					customers
-				WHERE
-					Company IS NULL
-					AND Country = 'USA';
-
+  
 			--# customers에서 Company 필드 값이 NULL이거나 Country 필드 값이 'USA'인 데이터의 LastName,FirstName,Company,Country 조회
 			--# NULL의 경우 데이터 타입을 나타내기 때문에 '=' 말고 IS를 사용해서 비교함	
 				SELECT
