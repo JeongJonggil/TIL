@@ -370,7 +370,9 @@ for(let i = 0; i<6; i++){
   const height = 170
   ```
 ### 8. 참고(let 호이스팅)
-- let age 선언 후 console.log 출력 
+- 결론 : let, const는 호이스팅은 동작하지만 에러가 뜰 뿐 호이스팅이 동작하지 않는건 아니다
+  
+- let 선언 후 console.log 출력 
 ```
 let age
 console.log(age)
@@ -388,6 +390,7 @@ let age = 30
 
 # 내부동작:
 let age
+
 console.log(age) //여기서 에러 발생
 age = 30 
 ```
