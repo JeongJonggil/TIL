@@ -360,7 +360,7 @@ for(let i = 0; i<6; i++){
   - JavaScript에서 변수들은 실제 실행시에 코드의 최상단으로 끌어 올려지게 되며 (hoisted) 이러한 이유 때문에 var로 선언된 변수는 선언 시에 undefined로 값이 초기화되는 과정이 동시에 발생
 
   ```javascript
-  console.log(name) // undefined
+  console.log(name) // 변수명을 name으로 하면 windows내부에서 name이라는 프로퍼티를 사용하기 때문에 처음에 공백 출려되고 다시 저장하면 계속 홍길동이 출력됨 (변수명 다른거쓰면 정상적으로 호이스팅 확인 가능)
   var name = '홍길동'
   
   console.log(age) // ReferenceError : Cannot access 'age' before initialization
@@ -369,3 +369,25 @@ for(let i = 0; i<6; i++){
   console.log(height) // ReferenceError : Cannot access 'height' before initialization
   const height = 170
   ```
+### 8. 참고(let 호이스팅)
+- let age 선언 후 console.log 출력 
+```
+let age
+console.log(age)
+
+# 내부 동작:
+let age
+//여기 사이에 age = undefined 가 자동으로 실행됨 ※이게 핵심 포인트※
+console.log(age)
+```
+
+- 호이스팅 로직
+```
+console.log(age)
+let age = 30
+
+# 내부동작:
+let age
+console.log(age) //여기서 에러 발생
+age = 30 
+```
