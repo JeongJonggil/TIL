@@ -246,12 +246,17 @@ while(i<6){
 ```
 
 - for(초기문; 조건문; 증감문){ 실행문 } 형태
-
+  -  for문에서 초기문, 조건문, 증감문은 생략 가능
 ```javascript
-//예시
-
+//예시1
 for(let i = 0; i<6; i++){
 	console.log(i)
+}
+
+//예시2 (초기문 생략)
+let i = 5;
+for (; i < 10; i++) {
+    console.log(i);
 }
 
 //동작원리
