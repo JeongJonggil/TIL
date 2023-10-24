@@ -25,7 +25,10 @@
 -  **변수 선언 키워드**(let, const)
   - **const는 선언 시 반드시 초기값 설정 필요, let은 초기값 없어도 선언 가능**
 
-@@@@@@@@@@@@@@@@@@@@[1]~[3]
+![1](https://github.com/JeongJonggil/TIL/assets/139416006/7714f5a3-ee6a-4131-8b24-4e96d213e3e9)
+![2](https://github.com/JeongJonggil/TIL/assets/139416006/4973d72e-ef32-4e5a-84bd-a49049e71687)
+![3](https://github.com/JeongJonggil/TIL/assets/139416006/6f013b70-a777-430f-8c5f-1f180219a769)
+
 
 > - 기본적으로 const 사용을 권장
 >
@@ -79,15 +82,16 @@
 
 - Number : 정수 또는 실수형 숫자를 표현하는 자료형
 
-@@@@@@@@@@@@@[4]
+![4](https://github.com/JeongJonggil/TIL/assets/139416006/39c9850c-072c-45f0-9a84-82cacd97b62b)
+
 
 - String : 텍스트 데이터를 표현하는 자료형
 
-@@@@@@@@@@@@@[5]
+![5](https://github.com/JeongJonggil/TIL/assets/139416006/b75c59cb-0439-43bf-b5d6-cac0280071d0)
 
 - Template literals(템플릿 리터럴) : 파이썬의 f' 스트링과 비슷한 자료형
-
-@@@@@@@@@@@@@[6]
+  
+![6](https://github.com/JeongJonggil/TIL/assets/139416006/5a2e0023-4ec0-42c4-a6e0-ba1497a0e99d)
 
 - null & undefined
 
@@ -101,8 +105,8 @@
   let b
   console.log(b) // undefined
   ```
-
-@@@@@@@@@@@@@[7]
+  
+![7](https://github.com/JeongJonggil/TIL/assets/139416006/642e5665-3c72-494d-92e6-d44e09ce8c98)
 
 - Boolean
 
@@ -288,22 +292,24 @@ for(let i = 0; i<6; i++){
 
 - 배열 반복과 for ... in 
 
-@@@@@@@@@@@@@[8]~[9]
+![8](https://github.com/JeongJonggil/TIL/assets/139416006/0829dd13-30ed-493d-81c7-117e9fad3705)
+![9](https://github.com/JeongJonggil/TIL/assets/139416006/cb225be7-a284-41b3-9ad2-a4224f84f5c5)
+
 
 - for ... in 과 for ... of 차이 예시 
   - **결과적으로 for ... in은 object 자료형에서만 사용한다고 정리하면 된다 !!** 
   - 그 외 자료형은 for ... of 사용한다고 생각하면 정리가 쉬움
 
-@@@@@@@@@@@@@[10]
+![10](https://github.com/JeongJonggil/TIL/assets/139416006/5274f895-8b7d-4056-a9fd-1afb9a877117)
+
 
 - 반복문 사용 시 const 사용 여부
 
-@@@@@@@@@@@@@[11]
+![11](https://github.com/JeongJonggil/TIL/assets/139416006/547575d7-2c84-4256-b152-b4868a6536da)
 
 - 반복문 종합
 
-@@@@@@@@@@@@@[12]
-
+![12](https://github.com/JeongJonggil/TIL/assets/139416006/4ff8bed2-740a-425d-91f8-a6a8b6b70f8c)
 
 
 ### 7. 참고(세미콜론, var, 함수 스코프, 호이스팅, NAN)
