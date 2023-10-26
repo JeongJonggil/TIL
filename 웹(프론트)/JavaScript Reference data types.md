@@ -258,8 +258,8 @@
     | ------- | ------------------------------------------------------------ |
     | forEach | 인자로 주어진 함수(콜백함수)를 배열 요소 각각에 대해 실행<br /> **(반환값이 없는 Array Helper)** |
     | map     | 배열 내의 모든 요소 각각에 대해 함수(콜백함수)를 호출하고, <br/>함수 호출 결과를 모아 **새로운 배열**을 반환<br />→ input과 output의 원소 개수가 일치할거 같다면 처음 map 사용을 고려해볼 것 |
-    | filter  | 특정 조건문에 해당하는 값만 반환함<br />→ input개수보다 output 개수가 작고 + output 개수가 2개 이상일 것 같으면 filter 사용을 고려해 볼 것 |
-    | reduce  |                                                              |
+    | filter  | 특정 조건문에 해당하는 값만 반환함<br/>→ input개수보다 output 개수가 작고 + output 개수가 2개 이상일 것 같으면 filter 사용을 고려해 볼 것 |
+    | reduce  | JavaScript의 `reduce` 메서드는 배열의 각 요소에 대해 주어진 리듀서(reducer) 함수를 실행하고, 그 결과를 단일 값으로 축적<br />→ object.reduce(before,current,index,array) 방식 |
 
 ![36](https://github.com/JeongJonggil/TIL/assets/139416006/853ac716-e935-4b0b-ba38-57f9d2b245ca)
 ![37](https://github.com/JeongJonggil/TIL/assets/139416006/b835ab3e-ee35-4684-b229-d643de9f0722)
