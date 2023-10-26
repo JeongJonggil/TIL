@@ -37,9 +37,10 @@
   "대상에 특정 Event가 발생하면 할 일을 등록한다"
   ```
 
-  @@@@@@@@@@@@@@@@[1]~[3]
+![1](https://github.com/JeongJonggil/TIL/assets/139416006/32c05281-1d3f-4d20-ae61-8a49ab49a7bb)
+![2](https://github.com/JeongJonggil/TIL/assets/139416006/5e2b8be5-a7cb-4e1c-b1de-5e03349a0c79)
+![3](https://github.com/JeongJonggil/TIL/assets/139416006/7cc1ad09-429e-4347-a283-b41454a661bc)
 
-  
 
 ### 5. 버블링
 
@@ -54,8 +55,9 @@
   - event.currentTarget 속성
     - '현재' 처리 중인 이벤트 핸들러가 연결된 요소
     - 항상 이벤트 핸들러가 연결된 요소만을 참조하는 속성
-    - 'this'와 같음
-    - @@@@@@@@@@@@@@[4]
+    - 'this'와 같음  
+        
+  ![4](https://github.com/JeongJonggil/TIL/assets/139416006/b1e3e9bd-4b2f-40ba-838f-18b622c5bd82)
 
 ### 6.이벤트 기본 동작 취소
 
