@@ -289,8 +289,26 @@
 ![50](https://github.com/JeongJonggil/TIL/assets/139416006/06510e3f-7191-44b2-95eb-c3d516b44934)
 ![51](https://github.com/JeongJonggil/TIL/assets/139416006/ecf2f558-b859-4745-b030-f76663762c4a)
 
-### 12. 참고(new 연산자)
+### 12. 참고(클래스, new 연산자)
+- 클래스 생성 예시 코드
+```
+class Person {
+    // 생성자
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    // 메소드
+    introduce() {
+        console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+    }
+}
+// 객체 생성
+const john = new Person('John', 30);
 
+// 메소드 호출
+john.introduce();  // 출력: Hello, my name is John and I am 30 years old.
+```
 ![32](https://github.com/JeongJonggil/TIL/assets/139416006/3b29baf5-1dc6-44fa-8136-54bc3409b9b3)
 ![33](https://github.com/JeongJonggil/TIL/assets/139416006/3e1325c1-072d-470b-ab50-2053500f020c)
 ![34](https://github.com/JeongJonggil/TIL/assets/139416006/af0be267-b4c3-49bc-baf3-a3a5c012ecef)
