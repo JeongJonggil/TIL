@@ -59,12 +59,20 @@
 > ※참고1 : 코드들이 동기적으로 실행될 때 콜 스택에 차례대로 들어갔다 나오게 됨. 하지만, 이 동안 콜 스택은 실제로 "비어 있지 않음". 즉, **하나의 동기적 작업이 끝나고 다른 동기적 작업이 시작되기까지의 사이에는 극히 짧은 시간이지만 콜 스택은 항상 무언가를 처리하고 있는 상태**이기 때문. → Task Queue에 대기중인 작업이 있다고 가정했을 때, x 작업이 Call Stack에서 나오고  y 작업이 Call Stack에 들오기 전인 Call Stack이 잠깐 비는 순간에 Task Queue에 있던 작업이 Call Stack으로 올라가지 않을까? 싶었는데 **결론은 Call Stack은 동기적 코드들의 실행이 완전히 끝날 때까지 비는 순간이 없음.**
 >
 > ※참고2 : setTimeout 등 비동기 함수에서 설정한 시간은 해당 시간이 지난후에 동작이 실행된다는 뜻이 아니고 Task Queue에 들어간다는게 정확한 의미임
-
-@@@@@@@@@@1~13
-
-
-
-
+  
+![1](https://github.com/JeongJonggil/TIL/assets/139416006/6f736ae3-b62b-4ddf-af2d-4e4dcde5c4ad)
+![2](https://github.com/JeongJonggil/TIL/assets/139416006/888df333-931b-4198-9a2a-92b221837af8)
+![3](https://github.com/JeongJonggil/TIL/assets/139416006/fd8228c8-cb71-4677-9dca-8d60de96b3cd)
+![4](https://github.com/JeongJonggil/TIL/assets/139416006/b8166e3c-b8d2-4e1c-a08f-c5ae102f8ecf)
+![5](https://github.com/JeongJonggil/TIL/assets/139416006/67ceebef-f69c-4820-9f45-80d8ef43e660)
+![6](https://github.com/JeongJonggil/TIL/assets/139416006/e025b049-5e79-47f2-9c3a-645540a05d14)
+![7](https://github.com/JeongJonggil/TIL/assets/139416006/1fbdf6f0-4bc9-46d4-bfb3-3f674e6ac669)
+![8](https://github.com/JeongJonggil/TIL/assets/139416006/41db3a78-a01a-41af-be98-6b8f3c963201)
+![9](https://github.com/JeongJonggil/TIL/assets/139416006/54587fe4-e779-40a3-ba81-a9589a32f0c0)
+![10](https://github.com/JeongJonggil/TIL/assets/139416006/1aec10ae-b047-4c53-8541-ce8841a54c9c)
+![11](https://github.com/JeongJonggil/TIL/assets/139416006/3181da56-ae9a-4419-8d4a-0ed4e6c180ae)
+![12](https://github.com/JeongJonggil/TIL/assets/139416006/77b45068-f8c0-40cc-b2af-ed77864b203e)
+![13](https://github.com/JeongJonggil/TIL/assets/139416006/276dc563-3dca-4a68-af4b-3c57e348cd08)
 
 ### 4. AJAX (Asynchronous JavaScript + XML)
 
