@@ -182,12 +182,14 @@
   - 실패에 대한 약속 catch(callback)
     - then()이 하나라도 실패하면 callback 실행
     - callback은 이전 작업의 실패 객체를 인자로 전달 받음
-
-@@@@@@@@@@@@@@@[1]~[3]
+    
+![1](https://github.com/JeongJonggil/TIL/assets/139416006/a3697652-45c6-4b30-a0f3-6265037c0b51)
+![2](https://github.com/JeongJonggil/TIL/assets/139416006/644868a4-1fa1-4804-92bf-8f31c894673f)
+![3](https://github.com/JeongJonggil/TIL/assets/139416006/be32e8e1-ed75-41a4-b559-27af61215b21)
 
 ### 8. async - await (교수님 수업)
 
-- promise 기반의 비동기 작업을 다루기 위한 최신 기술
+- **promise 기반의 비동기 작업을 다루기 위한 가장 최신 기술**
 - **async**:
   - 비동기로 처리할 함수 앞에 `async`를 붙이면 해당 함수는 항상 프로미스(Promise)를 반환.
   - 심지어 그 함수가 프로미스가 아닌 값을 반환해도 자바스크립트 엔진이 그 값을 프로미스로 감싸서 반환함
