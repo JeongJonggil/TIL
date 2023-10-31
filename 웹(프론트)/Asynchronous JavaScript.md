@@ -182,8 +182,10 @@
   - 실패에 대한 약속 catch(callback)
     - then()이 하나라도 실패하면 callback 실행
     - callback은 이전 작업의 실패 객체를 인자로 전달 받음
-
-@@@@@@@@@@@@@@@[1]~[3]
+    
+![1](https://github.com/JeongJonggil/TIL/assets/139416006/a3697652-45c6-4b30-a0f3-6265037c0b51)
+![2](https://github.com/JeongJonggil/TIL/assets/139416006/644868a4-1fa1-4804-92bf-8f31c894673f)
+![3](https://github.com/JeongJonggil/TIL/assets/139416006/be32e8e1-ed75-41a4-b559-27af61215b21)
 
 ### 8. async - await (교수님 수업)
 
