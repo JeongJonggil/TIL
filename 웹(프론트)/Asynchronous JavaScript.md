@@ -100,7 +100,7 @@
 
 ### 5. Axious
 
-- JavaScript에서 사용되는 Promise 기반 HTTP 클라이언트 라이브러리
+- JavaScript에서 사용되는 **Promise 기반 HTTP 클라이언트 라이브러리**
 - 서버와의 HTTP 요청과 응답을 간편하게 처리할 수 있도록 도와주는 도구
 
 - ##### Axious 설치
