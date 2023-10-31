@@ -103,12 +103,11 @@
   threeArgs() // [undefined,undefined,undefined]
   threeArgs(1) // [1, undefined, undefined]
   threeArgs(2,3) // [2,3,undefined]
-  
   ```
-
+  
   - 매개변수와 인자의 개수 불일치 
     - **매개변수 개수 < 인자 개수 : 초과 입력한 인자는 사용하지 않음**
-
+  
   ```
   const noArgs = function (){
   	return 0
