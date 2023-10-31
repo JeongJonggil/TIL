@@ -2,7 +2,7 @@
 
 ### 1. Ajax와 서버
 
-@@@@@@@@@@@@@@@@[1]
+![1](https://github.com/JeongJonggil/TIL/assets/139416006/80f856e8-6ab2-4b6b-b020-49ec30a74a07)
 
 - Ajax를 활용한 팔로우/팔로워 기능 구현 코드
 
