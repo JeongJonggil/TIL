@@ -152,3 +152,122 @@ def follow(request, user_pk):
     return redirect('accounts:profile', you.username)
 ```
 
+
+
+- Ajax를 활용한 좋아요 기능 구현 코드
+
+```javascript
+#index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>INDEX</h1>
+  {% if request.user.is_authenticated %}
+    <h3>{{ user.username }}님 안녕하세요!</h3>
+    <a href="{% url "accounts:profile" user.username %}">내 프로필</a>
+    <form action="{% url "accounts:logout" %}" method="POST">
+      {% csrf_token %}
+      <input type="submit" value="LOGOUT">
+    </form>
+    <form action="{% url "accounts:delete" %}" method="POST">
+      {% csrf_token %}
+      <input type="submit" value="회원탈퇴">
+    </form>
+    <a href="{% url "accounts:update" %}">회원정보수정</a>
+  {% else %}
+    <a href="{% url "accounts:login" %}">LOGIN</a>
+    <a href="{% url "accounts:signup" %}">SIGNUP</a>
+  {% endif %}
+
+  <hr>
+  
+  <a href="{% url 'articles:create' %}">CREATE</a>
+  <hr>
+  {% for article in articles %}
+    <p>
+      작성자 : 
+      <a href="{% url "accounts:profile" article.user.username %}">{{ article.user }}</a>
+    </p>
+    <p>글 번호 : {{ article.pk }}</p>
+    <a href="{% url "articles:detail" article.pk %}">
+      <p>글 제목 : {{ article.title }}</p>
+    </a>
+    <p>글 내용 : {{ article.content }}</p>
+    <form class="likes-forms" data-article-id="{{ article.pk }}">
+      {% csrf_token %}
+      {% if request.user in article.like_users.all %}
+        <input type="submit" value="좋아요 취소" id="like-{{ article.pk }}">
+      {% else %}
+        <input type="submit" value="좋아요" id="like-{{ article.pk }}">
+      {% endif %}
+    </form>
+    <hr>
+  {% endfor %}
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    const formTags = document.querySelectorAll('.likes-forms')
+    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value
+
+    formTags.forEach((formTag) => {
+      formTag.addEventListener('submit', function (event) {
+        event.preventDefault()
+
+        const articleId = formTag.dataset.articleId
+
+        axios({
+          url: `/articles/${articleId}/likes/`,
+          method: 'post',
+          headers: {'X-CSRFToken': csrftoken},
+        })
+          .then((response) => {
+            // console.log(response.data.is_liked)
+            const isLiked = response.data.is_liked
+            const likeBtn = document.querySelector(`#like-${articleId}`)
+
+            if (isLiked === true) {
+              likeBtn.value = '좋아요 취소'
+            } else {
+              likeBtn.value = '좋아요'
+            }
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+      })
+    })
+  </script>
+</body>
+</html>
+
+```
+
+```python
+#views.py
+
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
+from .models import Article, Comment
+from .forms import ArticleForm, CommentForm
+
+@login_required
+def likes(request, article_pk):
+    article = Article.objects.get(pk=article_pk)
+    if request.user in article.like_users.all():
+        article.like_users.remove(request.user)
+        is_liked = False
+    else:
+        article.like_users.add(request.user)
+        is_liked = True
+    context = {
+        'is_liked': is_liked,
+    }
+    return JsonResponse(context)
+```
+
