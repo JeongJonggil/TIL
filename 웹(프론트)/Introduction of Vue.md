@@ -14,11 +14,9 @@
   - 웹에서 하는일이 많아졌다
 
     - 단순히 무언가를 읽는곳 → 무언가를 하는 곳
-
-![1](https://github.com/JeongJonggil/TIL/assets/139416006/65b94999-7000-45d6-a0fc-eb3cc951689e)
-
     - 다루는 데이터가 많아졌다
 
+![1](https://github.com/JeongJonggil/TIL/assets/139416006/65b94999-7000-45d6-a0fc-eb3cc951689e)
 ![2](https://github.com/JeongJonggil/TIL/assets/139416006/84740eca-8a04-4c4e-b0f6-cee7db914033)
 
 ### 3. SPA(Single Page Application)
