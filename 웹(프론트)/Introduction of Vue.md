@@ -15,18 +15,18 @@
 
     - 단순히 무언가를 읽는곳 → 무언가를 하는 곳
 
-      @@@@@@@@@@@@@@ [1]
+![1](https://github.com/JeongJonggil/TIL/assets/139416006/65b94999-7000-45d6-a0fc-eb3cc951689e)
 
     - 다루는 데이터가 많아졌다
 
-​			@@@@@@@@@@@@@@[2]
+![2](https://github.com/JeongJonggil/TIL/assets/139416006/84740eca-8a04-4c4e-b0f6-cee7db914033)
 
 ### 3. SPA(Single Page Application)
 
 - 페이지 한 개로 구성된 웹 애플리케이션
 - 웹 애플리케이션의 초기 로딩 후 새로운 페이지 요청 없이 동적으로 화면을 갱신하며 사용자와 상호작용하는 웹 애플리케이션 → CSR 방식
 
- 	@@@@@@@@@@@@@@[2]
+![3](https://github.com/JeongJonggil/TIL/assets/139416006/4a7f435c-4bcf-41bb-92b2-1ba5e0888114)
 
 ### 4. Client-side Rendering(CSR)
 
@@ -114,10 +114,21 @@
     => **ref가 객체이기 때문에 const로 변수명을 선언해도 값을 바꾸는 것은 객체의 속성값을 바꾸는 거기 때문에 반응형으로 구현이 가능함**
   - v- on : click 는 @click 으로 작성 가능 
 
-@@@@@@@@@@@@@@[4]-[13]
-
-
+![4](https://github.com/JeongJonggil/TIL/assets/139416006/e7e5f2b0-b808-454a-89fc-b3d50eb41ad8)
+![5](https://github.com/JeongJonggil/TIL/assets/139416006/2880ff27-549e-4cae-a90d-18f8745cdb17)
+![6](https://github.com/JeongJonggil/TIL/assets/139416006/9e600b9b-8cc9-40fb-a3ff-7ed2db5b17b7)
+![7](https://github.com/JeongJonggil/TIL/assets/139416006/e3b6f000-3dca-44dc-b682-4635193a38b4)
+![8](https://github.com/JeongJonggil/TIL/assets/139416006/5e2e05ba-2638-4b34-a5a5-84b315fe8308)
+![9](https://github.com/JeongJonggil/TIL/assets/139416006/69a5d098-570b-4feb-bd61-bc77108dcfc2)
+![10](https://github.com/JeongJonggil/TIL/assets/139416006/42ae9d94-147c-4352-bec1-500cb2841daa)
+![11](https://github.com/JeongJonggil/TIL/assets/139416006/ce3c5250-6353-4981-9bce-083997016c33)
+![12](https://github.com/JeongJonggil/TIL/assets/139416006/0ca1e894-be96-49b0-84f7-7ab86f19aa6a)
+![13](https://github.com/JeongJonggil/TIL/assets/139416006/7deddaeb-6c63-4bda-a195-df79366b8a22)
 
 - 참고
-
-@@@@@@@@@@@@[14]~[19]
+![14](https://github.com/JeongJonggil/TIL/assets/139416006/7f651860-b0ce-488b-9b05-c96eae5ae5aa)
+![15](https://github.com/JeongJonggil/TIL/assets/139416006/9d7881c2-eccd-4cbb-8479-98040fd84900)
+![16](https://github.com/JeongJonggil/TIL/assets/139416006/75f7b222-7705-4df6-92f2-4744ef4e1064)
+![17](https://github.com/JeongJonggil/TIL/assets/139416006/ecd3d044-11d2-41b7-a175-dc877cad1aa0)
+![18](https://github.com/JeongJonggil/TIL/assets/139416006/51e5b2c0-8945-4fef-990a-8418479f350a)
+![19](https://github.com/JeongJonggil/TIL/assets/139416006/bc82f731-91a5-44b1-b8b4-b44395d25117)
