@@ -10,7 +10,7 @@
   ```vue
   <p>Message : {{ msg }} </p>
   ```
-
+  
   - 데이터 바인딩의 가장 기본적인 형태
   - 이중 중괄호 구문 (콧수염 구문)을 사용
   - 콧수염 구문은 해당 구성 요소 인스턴스의 msg 속성 값으로 대체
@@ -80,8 +80,8 @@
   ```vue
   <p v-if="seen">Hi There</p>
   ```
-
-  @@@@@@@@@@@@@@@@[1]
+  
+![1](https://github.com/JeongJonggil/TIL/assets/139416006/a8c0dfce-7d18-4ab8-8716-22e38174e543)
 
 - Directive - Arguments
 
@@ -108,7 +108,9 @@
 
   - 하나 이상의 속성 또는 컴포넌트 데이터를 표현식에 동적으로 바인딩
 
-  @@@@@@@@@@@@@@@@[2]~[4]
+![2](https://github.com/JeongJonggil/TIL/assets/139416006/032d5db4-1d24-4a5c-b495-4429c92185c8)
+![3](https://github.com/JeongJonggil/TIL/assets/139416006/671c6f24-9f1f-4007-ac02-e7fa7eaf7611)
+![4](https://github.com/JeongJonggil/TIL/assets/139416006/ece3dca9-d44e-4cfd-a9f2-7b53f93607d2)
 
 ### 4. Class and Style Bindings
 
@@ -116,14 +118,29 @@
 - 그러나 단순히 문자열 연결을 사용하여 이러한 값을 생성하는 것은 번거롭고 오류가 발생하기가 쉬움
 - Vue는 클래스 및 스타일과 함께 v-bind를 사용할 때 객체 또는 배열을 활용한 개선 사항을 제공
 
-@@@@@@@@@@@@@@@@[5]~[14]
+![5](https://github.com/JeongJonggil/TIL/assets/139416006/1556e277-f394-4354-b6fe-44c603a76463)
+![6](https://github.com/JeongJonggil/TIL/assets/139416006/9fc4f551-f976-4a2d-8b2d-16bdae006448)
+![7](https://github.com/JeongJonggil/TIL/assets/139416006/1255addf-db44-40b4-8e4c-3e6ede10b5fc)
+![8](https://github.com/JeongJonggil/TIL/assets/139416006/5f40b431-e744-4e8e-83e5-df49809886d4)
+![9](https://github.com/JeongJonggil/TIL/assets/139416006/7b8931af-8dd6-4206-9e05-749cc3c7c1ab)
+![10](https://github.com/JeongJonggil/TIL/assets/139416006/e2afda80-ca3c-47f2-8462-ec53e9377791)
+![11](https://github.com/JeongJonggil/TIL/assets/139416006/699c3611-66ee-41f9-ae3d-abdd6edfa4ae)
+![12](https://github.com/JeongJonggil/TIL/assets/139416006/30837df3-a10a-4a8f-839e-42761460fe77)
+![13](https://github.com/JeongJonggil/TIL/assets/139416006/6d9cd1f8-3722-4835-ad34-27a2218ed071)
+![14](https://github.com/JeongJonggil/TIL/assets/139416006/ff768011-11d9-434e-a639-ea2d48288652)
 
 ### 5. Event Handling
 
 - v-on
   - DOM 요소에 이벤트 리스너를 연결 및 수신
-
-@@@@@@@@@@@@@{15}~[22]
+![15](https://github.com/JeongJonggil/TIL/assets/139416006/7b8287eb-d924-4d02-bc78-e2005744c638)
+![16](https://github.com/JeongJonggil/TIL/assets/139416006/8430d766-5e7b-493a-b752-82d653952491)
+![17](https://github.com/JeongJonggil/TIL/assets/139416006/869723e3-9f92-446e-85e8-ef556f092a79)
+![18](https://github.com/JeongJonggil/TIL/assets/139416006/d4bf5cfd-fc2d-4c00-ac39-570d5cdd1ac1)
+![19](https://github.com/JeongJonggil/TIL/assets/139416006/a8090857-e62e-43b9-b0b6-7f197c25ba0c)
+![20](https://github.com/JeongJonggil/TIL/assets/139416006/8444d34f-19a8-4b29-a5e8-7baaee3ff4c4)
+![21](https://github.com/JeongJonggil/TIL/assets/139416006/08f43326-4250-4725-8162-13a7f11f1b76)
+![22](https://github.com/JeongJonggil/TIL/assets/139416006/fed3e5fe-3e72-4dd0-a91c-7a2349da14d9)
 
 ### 6. Form Input Bindings
 
@@ -132,9 +149,11 @@
   - v-bind와 v-on을 함께 사용
   - v-model 사용
 
-@@@@@@@@@@@@@{23}~[24]
+![23](https://github.com/JeongJonggil/TIL/assets/139416006/d7cae3b1-f778-4949-b793-029cf66a5e5b)
+![24](https://github.com/JeongJonggil/TIL/assets/139416006/f18487cd-1486-4407-9467-d1b48b4b9d61)
 
 - **v-model**
   - form input 요소 또는 컴포넌트에서 양방향 바인딩을 만듦
+![25](https://github.com/JeongJonggil/TIL/assets/139416006/63f1a341-4933-461e-9a49-4887a7e1185c)
+![26](https://github.com/JeongJonggil/TIL/assets/139416006/38faec45-02a9-4ef6-a699-0e81e35ced82)
 
-@@@@@@@@@@@@[25]~[26]
