@@ -26,7 +26,7 @@
 - 목적 : 장애 조치와 복구 절차가 효과적이고 효율적인지 확인
 - ex) 임계점 이상의 인원이 서비스를 이용할 때 어떻게 대처하는가 ?
 
-@@@@@@@@@@@@@@@@@@[1]
+![1](https://github.com/JeongJonggil/TIL/assets/139416006/8aa623bd-edf3-4438-94bc-984b74d72539)
 
 
 
@@ -38,3 +38,13 @@
 - Locust를 선택한 이유
   - 파이썬 언어로 테스트 시나리오를 간편하게 작성할 수 있습니다.
   - 결과를 웹에서 확인할 수 있는 UI를 지원합니다.
+![2](https://github.com/JeongJonggil/TIL/assets/139416006/eaf87401-86f5-4c0a-82cf-adb4a9bb7783)
+![3](https://github.com/JeongJonggil/TIL/assets/139416006/c6828bce-4971-4bd0-8048-c4630489ac06)
+![4](https://github.com/JeongJonggil/TIL/assets/139416006/d08a611f-2ea4-4e77-a879-5498ea5c5e00)
+![5](https://github.com/JeongJonggil/TIL/assets/139416006/f7ff2d21-3926-430e-a730-baf7c25eb871)
+![6](https://github.com/JeongJonggil/TIL/assets/139416006/15e3cebd-9cac-4114-a1bc-ecbdef0ff805)
+![7](https://github.com/JeongJonggil/TIL/assets/139416006/19472448-a279-4c9a-9c37-f41e22cd3653)
+![8](https://github.com/JeongJonggil/TIL/assets/139416006/ff11d423-b68c-49d1-bdd4-9c1fd98e555a)
+![9](https://github.com/JeongJonggil/TIL/assets/139416006/f95fc189-786a-4fb3-9a5a-39da9538299c)
+![10](https://github.com/JeongJonggil/TIL/assets/139416006/a9f1cf4f-2cb0-4ea9-a182-9def52de6237)
+![11](https://github.com/JeongJonggil/TIL/assets/139416006/77980895-f79f-4da7-8c01-fee9594c46fe)
