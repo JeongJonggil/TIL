@@ -1,4 +1,4 @@
-# Basic Syntax - 02
+# Vue Basic Syntax - 02
 
 ### 1. Computed Properties
 
@@ -31,8 +31,9 @@
     - **method**
 
       - **반면, method 호출은 다시 렌더링이 발생할 때마다 항상 함수를 실행**
+![1](https://github.com/JeongJonggil/TIL/assets/139416006/dc81f111-fc63-4b7b-ac1b-681b7acd6e2a)
+![2](https://github.com/JeongJonggil/TIL/assets/139416006/eaa64b77-3999-4ae4-9d3a-6721ba8fe20a)
 
-    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@[1]~[2]
 
 ### 2. Conditional Rendering
 
@@ -76,8 +77,8 @@
     ```
 
 - v-if **vs** v-show
+![3](https://github.com/JeongJonggil/TIL/assets/139416006/bfe94a35-1bff-40b4-ac70-46f31903a591)
 
-@@@@@@@@@@@@@@@@@@@@@@@@@ [3]
 
 ### 3. List Rendering
 
@@ -180,20 +181,24 @@
 >
 > - **Computed 사용 예시**: 사용자의 이름과 성을 합쳐서 전체 이름을 표시해야 하는 경우.
 > - **Watcher 사용 예시**: 사용자의 입력 값에 따라 서버에서 데이터를 가져와야 하거나, 입력 값의 유효성을 비동기적으로 검사해야 하는 경우.
+![4](https://github.com/JeongJonggil/TIL/assets/139416006/070c1753-c105-42e9-b544-7fe6fd53a7ce)
 
-@@@@@@@@@@@@@@@@@[4]
 
 ### 5. Lifecycle Hooks
 
 - Vue 인스턴스의 생애주기 동안 특정 시점에 실행되는 함수
 - 개발자가 특정 단계에서 의도하는 로직이 실행될 수 있도록 함
+![5](https://github.com/JeongJonggil/TIL/assets/139416006/3bee012f-0ee0-4e0f-a5b1-0b8d10fba7d3)
 
-@@@@@@@@@@@@@@@@@[5]
 
 ### 6. Vue Style Guide
+![6](https://github.com/JeongJonggil/TIL/assets/139416006/ba6f76d9-571d-424b-9cfb-d9c0f2b2cd5a)
+![7](https://github.com/JeongJonggil/TIL/assets/139416006/94cc8a1b-fc50-452b-ae03-1caca545c0d5)
+![8](https://github.com/JeongJonggil/TIL/assets/139416006/6336a7ca-9317-451c-8611-1fb58495f481)
 
-@@@@@@@@@@@@@@@@@[6]~[8]
 
 ### 7. 참고
-
-@@@@@@@@@@@@@@@@@[9]~[8]
+![9](https://github.com/JeongJonggil/TIL/assets/139416006/2e9986ae-e170-46dd-bec1-8624f4227c3d)
+![10](https://github.com/JeongJonggil/TIL/assets/139416006/1d31955f-5104-43c7-b633-0d10dea282ad)
+![11](https://github.com/JeongJonggil/TIL/assets/139416006/c4b0559b-2dca-40d2-9288-8df925aa6737)
+![12](https://github.com/JeongJonggil/TIL/assets/139416006/ea2660c3-97d3-4851-80cf-b6fab7e52eea)
