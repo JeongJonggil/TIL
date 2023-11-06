@@ -45,23 +45,22 @@
   > HTML <template> element
   >
   > - 페이지가 로드 될 때 렌더링 되지 않지만 자바스크립트를 사용하여 나중에 문서에서 사용할 수 있도록 하는 HTML을 보유하기 위한 메커니즘
-  > - `<template>` 태그는 렌더링 결과에는 포함되지 않으며, 오직 구조를 정의하는데 사용되는 HTML 태그
-
-  - ```vue
+  > - `<template>` 태그는 렌더링 결과에는 포함되지 않으며, 오직 구조를 정의하는데 사용되는 HTML 태그  
+  
+  ```vue
     #예시
     <!-- else if -->
         <div v-if = "name==='Alice'">Alice입니다</div>
         <div v-else-if="name==='bella'">Bella입니다</div>
         <div v-else-if="name==='Cathy'">Cathy입니다</div>
         <div v-else>아무도 아닙니다.</div>
-    
     <!-- v-if on <template> -->
         <template v-if="name==='Cathy'">
           <div>Cathy입니다</div>
           <div>나이는 30살입니다</div>
         </template>
     ```
-
+    
 - **v-show**
 
   - **표현식 값의 T/F를 기반으로 요소의 가시성을 전환**
