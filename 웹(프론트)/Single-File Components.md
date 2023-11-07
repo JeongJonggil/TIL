@@ -89,8 +89,11 @@ const msg = ref('Hello World!')
   - 필요한 스타일 시트, 스크립트 등의 외부 리소스를 로들 할 수 있음(ex. bootstrap CDN)
 
 - **src 디렉토리**
-
-@@@@@@@@@@@@[1]~[5]
+![1](https://github.com/JeongJonggil/TIL/assets/139416006/944c87b7-be44-49c2-b0b4-70a042dc54f4)
+![2](https://github.com/JeongJonggil/TIL/assets/139416006/4273cb52-30d4-4c33-8e7e-5cabe199ea14)
+![3](https://github.com/JeongJonggil/TIL/assets/139416006/cbbe4f52-cac2-493b-a1ef-d4dfeb20e750)
+![4](https://github.com/JeongJonggil/TIL/assets/139416006/ea975e3a-c7e0-46f4-9c96-e1effa55d715)
+![5](https://github.com/JeongJonggil/TIL/assets/139416006/18c30fd8-3fdc-4dbd-9230-7bce262d6796)
 
 ### 6. 모듈과 번들러
 
