@@ -109,12 +109,22 @@
 
 - router의 인스턴스 메서드를 사용해 RouterLink로 a 태그를 만드는 것처럼 프로그래밍으로 네비게이션 관련 작업을 수행할 수 있음
 
-  - 다른 위치로 이동하기 : router.push()
-    - router.push의 속성으로는 name,params,path,qeury가 있음
-       - name: new VueRouter에서 정의한 routes 설정에서 name 속성을 통해 라우트에 이름을 지정할 수 있습니다. 이름을 사용하여 라우트를 참조할 때 params를 사용하여 동적 세그먼트를 전달할 수 있습니다.
-       - 
+  - 다른 위치로 이동하기 : **router.push()**
+    - router.push의 속성으로는 **name,params,path,qeury**가 있음
+       - name
+         - new VueRouter에서 정의한 routes 설정에서 name 속성을 통해 라우트에 이름을 지정. 
+         - 이름을 사용하여 라우트를 참조할 때 params를 사용하여 동적 세그먼트를 전달할 수 있습니다.
+       - params
+         - URL에 포함될 동적 세그먼트 값입니다. 이 값은 경로에 정의된 동적 세그먼트 `:param` 형식에 매핑되어 URL의 일부가 됨.
+         - 이름이 지정된 라우트를 사용할 때 `params`를 이용하여 특정 세그먼트에 값을 사용 가능
+       - path
+         - 라우트의 URL 경로입니다. `/user/123`과 같이 직접적인 URL을 지정할 때 사용됩니다.
+         - `path`를 사용할 때는 동적 세그먼트를 직접 URL 경로에 포함시켜야 하며, `params`는 사용되지 않습니다.
+       - query
+         - URL의 쿼리 파라미터를 나타냅니다. 이는 `?key=value` 형태의 쿼리 스트링으로 URL에 포함됩니다.
+         - `query`는 라우트의 정의와 상관없이 언제든지 추가될 수 있으며, `path` 또는 `name`과 함께 사용될 수 있습니다.
   - 현재 위치 바꾸기 : router.replace()
-
+  
   - user view에서 홈으로 가는 버튼 만들기
 
 ```vue
