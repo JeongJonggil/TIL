@@ -110,6 +110,9 @@
 - router의 인스턴스 메서드를 사용해 RouterLink로 a 태그를 만드는 것처럼 프로그래밍으로 네비게이션 관련 작업을 수행할 수 있음
 
   - 다른 위치로 이동하기 : router.push()
+    - router.push의 속성으로는 name,params,path,qeury가 있음
+       - name: new VueRouter에서 정의한 routes 설정에서 name 속성을 통해 라우트에 이름을 지정할 수 있습니다. 이름을 사용하여 라우트를 참조할 때 params를 사용하여 동적 세그먼트를 전달할 수 있습니다.
+       - 
   - 현재 위치 바꾸기 : router.replace()
 
   - user view에서 홈으로 가는 버튼 만들기
@@ -132,8 +135,7 @@
   const goHome = function(){
       router.push({ name : 'home' }) 
     // url에 인자 전달하려면 params속성 사용 가능  
-    // router.push({ name : 'home', params: {username:'alice'}}) 
-    
+    // router.push({ name : 'home', params: {username:'alice'}})
     // replace
     // router.replace({ name : 'home'})
 }
