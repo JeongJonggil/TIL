@@ -182,7 +182,9 @@
       
       1. to : 이동 할 URL 정보가 담긴 Route 객체
       2. from : 현재 URL 정보가 담긴 Route 객체
-      3. 선택적 반환 값 
+          ※ 부가설명 : 
+           to와 from 매개변수는 Vue Router의 네비게이션 가드에서 자동으로 제공. 개발자가 이 매개변수들을 직접 지정할 필요는 없음. Vue Router 	내에서 라우트 간의 전환(네비게이션)이 발생할 때, 네비게이션 가드가 호출되면 Vue Router는 자동으로 현재 라우트(from)와 이동하려는 라우	   트(to)에 관한 정보를 해당 가드 함수에 제공.
+      4. 선택적 반환 값 
        (1) false : 현재 네비게이션을 취소
        (2) Route Location : 다른 위치로 redirect
        (3) return이 없다면 'to' URL Route 객체로 이동
