@@ -57,3 +57,48 @@ score3 = {1,2,3,4,5}; //주의! 이건 안됨
   System.out.println(Arrays.toString(nums));
   
   ```
+
+### 4. 배열의 복사
+
+- 배열은 생성하면 길이를 변경할 수 없기 때문에 더 많은 저장공간이 필요하다면 큰 배열을 생성하고 이전 배열의 값을 복사 해야함.
+
+- Arrays.copyof(원본배열, 복사할 배열의 크기) 사용
+
+  ```java
+  //예시코드 
+  import java.util.Arrays;
+  
+  public class Main{
+      public static void main(String[] args) {
+          int[] nums = {45, 9, 3, 7, 16, 25};
+  
+          //배열 복사 정통적인 방식
+          int[] tmp = new int[nums.length*2];
+          for (int i=0; i<nums.length; i++) {
+              tmp[i] = nums[i];
+          }
+          
+         	//Arrays.copyof 방식
+          int[] tmp2 = Arrays.copyOf(nums,nums.length*2);
+      }
+  }
+  ```
+
+### 5. 다차원 배열
+
+- 2차원 이상의 배열을 의미
+- **다차원 배열의 print는 Arrays.deepToString(배열명) 사용해야함**
+- 배열 요소로 또 다른 배열을 가지는 배열
+- **2차원 배열은 배열 요소로 1차원 배열을 참조를 가지는 배열**
+- **3차원 배열은 배열 요소로 2차원 배열의 참조를 가지는 배열**... (4~N차원 배열도 마찬가지)등
+
+- 2차원 배열 선언
+
+  - `int[][] iArr` **(이 방법 권장)**
+  - `int iArr[][]`
+  - `int[] iArr[]`
+
+  ```java
+  int[][] arr4 = new int[5][5]; //앞의 [5]는 행의길이, 뒤의 [5]는 각 행별 열의 길이 
+  int[][] arr5 = new int[5][]; //앞의 [5]는 행의 길이, 뒤의 []는 각 행별로 null이 들어감
+  ```
