@@ -32,6 +32,7 @@ const addCart = (product) =>{
     
     // 중복된 제품이 있는지 확인
     const isDuplicate = exisitingCart.length > 0 && existingCard.find((item) => item.id === product.id)
+    //const isDuplicate = existingCart.value.includes(product.id) 해도 됨
     
     if(!isDuplicated){
       alert('장바구니에 추가합니다')
