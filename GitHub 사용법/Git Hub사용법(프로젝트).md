@@ -50,11 +50,13 @@
    - GitHub 메인페이지 → master 브랜치 → Protect this Branch 클릭
      - 또는 settings → Code and automation → Branches로 이동
      - Branch name pattern란에 보호할 브랜치명 적기
-   - **Lock branch는 필수로 권장함**
-     - 해당 브랜치에 git push 명령어가 실행되지 않게하는 옵션
-     - 설정 후 해당 브랜치로 git push하면 에러뜸
    - **Require a pull request before merging 권장**
-     - 코드를 master에 업데이트 하기 전에 request로 모두에게 확인을 요청하는 작업
+     - 해당 브랜치에 직접 PUSH할 수 없게함. 무조건 PR(Pull Request)을 통해서만 반영할 수 있게 만드는 옵션. 
+     - 세부옵션 
+       -  Require approvals : PR의 승인할 인원수
+   - **Lock Branch 권장 (정확히 무슨 기능인지 못 찾겠어서 추정해서 작성함..)**
+     - 해당 브랜치를 읽기 전용으로 바꿔서 읽는거 제외하고 모든 동작 잠궈두는 옵션으로 추정됨..
+     - Lock Branch 옵션이 활성화된 Branch에 push, merge 등 다른 작업을 하려면 팀장이 레포지토리 - settings - branches 들어가서 Lock Branch 옵션 다시 비활성화 하고 작업해야 되는거 같습니다.
    - 그 외 팀 특성에 맞게 옵션들 체크하기
 
 
@@ -62,38 +64,29 @@
 ### 2. 팀원 작업 (파일 수정 및 업로드)
 
 1. **프로젝트 레포 클론하기 (팀원)**
-
+   - 이미 클론 되어있으면 `git pull` 사용하기
 2. **feature 브랜치 사용하는 경우만 해당 (팀원)**
-
    - feature : 프로젝트에서 작업을 소분해놓은거 (레포 홈페이지의 projects 탭에서 사용가능) 
 
    - 해당 작업할 feature 접속
      - ` convert to issue → feature B 페이지 접속 → create a branch 클릭`**(Branch Source는 develop으로 설정)**
      - 로컬 작업 공간의 터미널에`git fetch origin`, `git switch [feature명]` 입력
-
-3.  **코드 작업 후 add, push, commit (팀원)**
-
-   - branch설정 잘해서 push 잘하기
-
+3. **코드 작업 후 add, commit, push (팀원)**
+   - `git clone` 으로  레포지토리를 복제하면, 모든 원격 브랜치의 데이터는 로컬로 다운로드되지만, 실제로 로컬 브랜치로 생성되는 것은 기본 브랜치(대부분 `main` 또는 `master`) 하나뿐임. 
+   - 원격 브랜치를 로컬 환경에서 작업하려면 `git branch -r`명령어를 통해 브랜치명을 확인하고,
+     `git switch [브랜치명]`을 통해 스위칭 한 후에 작업하면 됨
 4. **풀 리퀘스트(PR) 요청 (팀원)**: 작업 branch에서 다른 branch로 파일을 보내도 되는지 타 팀원들에게 허가 요청하는거
-
    - 해당 branch 페이지 접속 → 상단 Pull requests 클릭 후 PR 작성
    - PR작성 : base branch(= to branch), compare branch(= from branch) 작성 + commit 작성
-
 5. **코드 리뷰(PR 검토) (팀장 및 타 팀원들)**
 
    - 해당 PR 요청 페이지로 접속하기
    - 반려 : 리뷰 작성 후 save a Review 클릭 → Finish your review 클릭 → Request changes 클릭
    - 수락 : Finish your review  클릭 → approve 클릭 
-
 6. **반려 시 3,4,5작업 반복(팀원)**
-
 7. **승인 시 코드 merge하기 (작업한 팀원 본인이 하는거임)**
-
-   - 업로드한 branch 페이지 들어가서 Merge pull request 클릭하면 요청한 branch로 merge 됨
-
+- 업로드한 branch 페이지 들어가서 Merge pull request 클릭하면 요청한 branch로 merge 됨
 8. **중요 : conflict 발생 시 해결방법**
-
    - conflict 
      - 내가 로컬에서 작업 중임
      - 타 팀원이 작업한 내용을 [to 브랜치]에 merge 함
