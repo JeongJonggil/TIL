@@ -27,7 +27,8 @@ export const useCounterStore = defineStore('counter', () => {
 
 - props, emit은 계층 구조가 싶어질 경우 비효율적, 관리가 어려워 짐 → 각 컴포넌트의 공유 상태를 추출하여, 전역에서 참조할 수 있는 저장소에서 관리 → **Pinia**
 
-  @@@@@@@@@@@@[1]
+![1](https://github.com/JeongJonggil/TIL/assets/139416006/d88b5129-8c84-47fa-a8af-c03874318b1e)
+
 
 - Vue 공식 상태 관리 라이브러리
 
@@ -38,20 +39,16 @@ export const useCounterStore = defineStore('counter', () => {
 - 구성 요소
 
   - store
-
-    @@@@@@@[2]
+![2](https://github.com/JeongJonggil/TIL/assets/139416006/9cfc5b75-a1fc-4361-aa4b-b70c80823b81)
 
   - state
-
-    @@@@@@@[3]
+![3](https://github.com/JeongJonggil/TIL/assets/139416006/f4b65dd5-7c97-48c9-95a4-03a0fd73c4b8)
 
   - getters
-
-    @@@@@@@[4]
+![4](https://github.com/JeongJonggil/TIL/assets/139416006/4cc02419-35c6-4aca-acf8-7fdfc132bbb7)
 
   - actions
-
-    @@@@@@@[5]
+![5](https://github.com/JeongJonggil/TIL/assets/139416006/3218d523-4047-452d-9f70-335b3aaad0d9)
 
   - plugin
 
@@ -102,16 +99,12 @@ console.log(store.doubleCount)
 // <button @click ="store.increment()"> 부분
 </script>
 ```
-
-@@@@@@@@@@@@@[6]
+![6](https://github.com/JeongJonggil/TIL/assets/139416006/da1e8f6f-e652-494b-b623-b2fcbeb5033d)
 
 ### 5. Pinia를 활용한 Todo 프로젝트 구현
 
 - Todo CURD
-
-@@@@@@@@@@@[7]
-
-
+![7](https://github.com/JeongJonggil/TIL/assets/139416006/52817dcc-e3d2-4161-b9c6-47889aef8ff5)
 
 ```javascript
 # stores/counter.js
