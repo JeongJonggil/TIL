@@ -19,10 +19,8 @@
   - Same Origin 예시
 
     - 아래 세영역이 일치하는 경우에만 동일 출처(Same-origin)로 인정
-
-    @@@@@@@@@@@@@@[1]~[2]@@@@@@@@@@@@@@@
-
-
+![1](https://github.com/JeongJonggil/TIL/assets/139416006/d5e85e6f-7643-4ed2-bb71-2f97dd6d8892)
+![2](https://github.com/JeongJonggil/TIL/assets/139416006/2e971504-19de-4362-882c-1c6933e44090)
 
 ### 2. CORS (Cross-Origin Resource Sharing, 교차 출처 리소스 공유)
 
@@ -31,10 +29,16 @@
 - 특정 출처(Origin)에서 실행 중인 웹 애플리케이션이 **다른 출처의 자원에 접근할 수 있는 권한을 부여**하도록 브라우저에 알려주는 체제
 - 만약 다른 출처의 리소스를 가져오기 위해서는 **이를 제공하는 서버가 브라우저에게 다른 출처지만 접근해도 된다는 사실을 알려야 함**
 
-​		@@@@@@@@@@@@@@[3]@@@@@@@@@@@@@@@
+![3](https://github.com/JeongJonggil/TIL/assets/139416006/cdb2090e-5eb5-4223-bfad-d10555f6706a)
+
 
 - **CORS 적용방법**
   - CORS Headers 설정
     - Django에서는 django-cors-headers 라이브러리 활용
     - 손쉽게 응답 객체에 CORS header를 추가해주는 라이브러리
-    - @@@@@@@@@@@@@@[4]~[7]@@@@@@@@@@
+![4](https://github.com/JeongJonggil/TIL/assets/139416006/5c33c0be-d850-45e1-99df-513d4f614fad)
+![5](https://github.com/JeongJonggil/TIL/assets/139416006/74e19285-093f-45c4-9928-a98fca9d9226)
+![6](https://github.com/JeongJonggil/TIL/assets/139416006/8dc46574-2a05-41d5-a5d1-d1016ef9a7d8)
+![7](https://github.com/JeongJonggil/TIL/assets/139416006/bc51a3f9-b2de-462f-884b-aff986eb1c49)
+
+
