@@ -1,7 +1,6 @@
 # Java(=JDK), STS 설치, MySQL 설치
 
 - **JDK 설치**
-
   1. azul.com 접속
 
   2. Download Now 클릭
