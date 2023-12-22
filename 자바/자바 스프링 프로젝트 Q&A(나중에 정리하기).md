@@ -13,7 +13,15 @@
        public ResponseEntity<Question> updateQuestion(@PathVariable(name="id") Integer id,   @ModelAttribute @Valid QuestionDto questionDto) {}
        ```
 
+2. HttpMessageNotWritableException :  Spring이 반환 된 객체의 속성을 가져 오지 못할 때 발생
+
+   - entity를 Json으로 변환하려 할 때 양방향 참조로 인해 JSON데이터로 변환하지 못해 발생하는 에러 (순환참조)
+   - 해결법은 아래 1번 참고
+
+
+
 <hr>
+
 
 ### ▣ 내용 
 
@@ -21,30 +29,98 @@
 
 - a : b 클래스가 1 : N 관계일 때,
 
-- b 필드에 @ManyToOne필드를 작성(django의 ForeignKey와 유사)
+- b 클래스의 필드에 @ManyToOne필드를 작성(django의 ForeignKey와 유사)
 
 - 추가로 역참조 구현 시 a 클래스에 @OneToMany어노테이션 작성 필요 (django는 모델 매니저를 통해 역참조를 이용가능했지만 스프링은 역참조 시 @OneToMany로 직접 명시해줘야 됨)
 
-  ```java
-  //ex
-  
-  @Entity
-  public class Question {
-      @OneToMany(mappedBy = "question", cascade = CascadeType.REMOVE)
-      private List<Answer> answerList;
-  }
-  
-  @Entity
-  public class Answer {
-      @ManyToOne
-      private Question question;
-  }
-  ```
-
-  
+  - ```java
+    //ex
+    
+    @Entity
+    public class Question {
+        @OneToMany(mappedBy = "question", cascade = CascadeType.REMOVE)
+        private List<Answer> answerList;
+    }
+    
+    @Entity
+    public class Answer {
+        @ManyToOne
+        private Question question;
+    }
+    ```
 
   > GPT : Java Spring에서는 이런 자동화된 역참조가 없습니다. `@OneToMany`와 `@ManyToOne` 어노테이션을 통해 명시적으로 양방향 관계를 설정해야 합니다. 
 
+- **추가로 b 클래스 entity를 Json으로 변환할 때 참조된 ManyToOne - OneToMany 때문에 순환참조가 발생함**
+
+  - **b 클래스의 `@ManyToOne` 필드를 담기위해 a클래스의 entity에 다시 `@OneTomany`필드로 b 클래스가 참조되어 있어서 무한 순환참조가 발생함**
+
+  - django는 참조된 a클래스의 인스턴스 객체를 자동으로 Json으로 직렬화하여 Json으로 내려주었지만 스프링은 추가 조작이 필요함
+
+  - 해결 방법은 여러가지가 있음
+
+    - **@JsonIgnore** : Json으로 직렬화 할 떄 특정 필드 완전히 무시
+
+      ```java
+      @ManyToOne
+      @JsonIgnore
+      private Question question;
+      ```
+
+    - **[!!!!!!!!추천!!!!!!] @JsonIgnoreProperties** : Json으로 직렬화 할 때 특정 필드안의 특정 필드를 무시 -> **필드안에 있는 특정 필드만 무시하고 싶을 때 사용하면 좋은듯** 
+
+      ```java
+      @entity
+      public class Answer {
+      @JsonIgnoreProperties("answerList")
+          private Question question;
+      }
+          
+      qestion 필드는 Qeustion 클래스가 담겨지는데, @JsonIgnoreProperties("answerList") 코드는 Answer를 직렬화 하는 과정에서 Question 클래스 안에 answerList의 직렬화를 무시할 수 있음
+      ```
+      
+    - **[!추천!] @JsonIdentityInfo** :  `@JsonIdentityInfo` 애너테이션을 클래스에 적용하면, Jackson은 해당 클래스의 객체를 직렬화할 때 각 객체에 대한 고유 ID를 할당합니다. 이 ID는 객체가 처음 직렬화될 때 생성되며, 이후 해당 객체에 대한 모든 참조는 이 ID를 통해 나타냅니다.**결과적으로, JSON 출력에서 같은 객체에 대한 여러 참조가 있더라도 해당 객체는 한 번만 표현되고, 나머지는 참조 ID로 표현됩니다.**
+    
+      ```java
+      //ex
+      import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+      import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+      
+      @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+      public class Parent {
+          private int id;
+          private String name;
+          private Set<Child> children;
+          // getters and setters...
+      }
+      
+      @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+      public class Child {
+          private int id;
+          private String name;
+          private Parent parent;
+          // getters and setters...
+      }
+      
+      이 경우, child 객체를 JSON으로 변환하면 다음과 같은 형태가 됩니다:
+      json
+      Copy code
+      {
+        "id": 2,
+        "name": "Child 1",
+        "parent": {
+          "id": 1,
+          "name": "Parent 1",
+          "children": [2] // Child 객체의 ID를 참조
+        }
+      }
+      ```
+    
+    - **Jackson의 @JsonManagedReference, @JsonBackReference 사용**
+      - `@JsonManagedReference` :  참조가 되는 앞부분을 의미하며, 정상적으로 직렬화를 수행한다. Collection Type 에 적용된다.
+      - `@JsonBackReference `: 참조가 되는 뒷부분을 의미하며, 직렬화를 수행하지 않는다.
+      
+    - **DTO(Data Transfer Object) 사용:** 엔티티 대신에 DTO를 사용하여 API 응답을 구성. DTO는 원하는 데이터 필드만 포함할 수 있으며, 엔티티와의 직접적인 연결을 끊어 순환 참조 문제를 해결할 수 있음. 추가로 **ModelMapper 또는 MapStruct 라이브러리**를 사용하면 엔티티를 DTO로 변환하는 과정을 자동화할 수 있음
 
 
 ### 2. entity에 작성한 코드대로 DB에 테이블 생성 기능
@@ -247,5 +323,30 @@
   public ResponseEntity<Question> createQuestion(@ModelAttribute @Valid QuestionDto questionDto){}
   ```
 
+### 8. ModelMapper
+
+- **서로 다른 클래스의 값을 한 번에 복사하게 도와주는 라이브러리**
+  : 어떤 Object(Source Object)에 있는 필드 값들을 자동으로 원하는 Object(Destination Object)에 Mapping 시켜주는 라이브러리
+
+  - 자세한 사용법은 https://squirmm.tistory.com/entry/Spring-modelMapper 참고
+
+  - ```java
+    ModelMapper modelMapper = new ModelMapper();
+    ModelMapper.map(Object source, Class<D> destinationType)
+    
+    //ex
+    Answer answer = mapper.map(answerDto, Answer.class);
+    ```
+
+- **DTO와 엔티티 간의 자동 매핑을 위해 주로 사용**
+
+- `ModelMapper`는 이름과 타입이 일치하는 필드 간에 자동으로 매핑을 수행. 따라서 두 객체간 필드 이름이 일치하는지 확인해야 함.
+
+- 복잡한 매핑 로직이나 매핑 예외 처리가 필요한 경우, `PropertyMap`을 사용하여 매핑 규칙을 정의해야 함
 
 
+
+### 9. controller, service 로직
+
+- 코드 작성할 떄 controller에 try - catch로 구문을 적고, try안에서 이루어지는 비지니스 로직은 service에 작성
+- 이 떄 service에서 발생한 에러를 controller의 catch로 넘겨서 최종적으로 에러 시 controller 쪽에서 에러를 반환하기
